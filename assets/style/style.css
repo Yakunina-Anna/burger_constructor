@@ -23,3 +23,8 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
