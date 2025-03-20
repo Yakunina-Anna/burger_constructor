@@ -1,0 +1,95 @@
+h1 {
+  font-size: 72px;
+  line-height: 80px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.font-36 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 800;
+}
+
+.font-24 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
+}
+
+.font-20 {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.font-20-semibold {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+.font-16 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.font-16-semibold {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.font-14 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.font-14-semibold {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.font-12 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.font-12-semibold {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}

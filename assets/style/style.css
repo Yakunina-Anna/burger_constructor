@@ -1,0 +1,25 @@
+@import "./base/_variables.css";
+@import "./base/_reset.css";
+@import "./base/_typography.css";
+@import "./base/_layout.css";
+
+@import "./pages/index.css";
+
+@import "./components/_button.css";
+@import "../fonts/fonts.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+  color: var(--black-color);
+  overflow-x: hidden;
+  overflow-y: auto;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth Page</title>
+  <style>
+  </style>
+  <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="auth">
+      <h1 class="auth__title">Make Your Burger</h1>
+      <div class="auth__inner">
+        <form id="signin-form" class="auth__form">
+          <h3>Вход</h3>
+          <div class="auth__input">
+            <label for="signin-email">Email:</label>
+            <input id="signin-email" type="email" name="email" placeholder="email" required>
+          </div>
+          <div class="auth__input">
+            <label for="signin-password">Пароль:</label>
+            <input id="signin-password" type="password" name="password" placeholder="password" required>
+          </div>
+          <div class="auth__input">
+            <button id="signin-button" type="submit" class="button button button--md button--primary">
+              <span id="signin-button-text">Войти</span>
+              <span id="signin-loader" class="loader loader-white opacity-0"></span>
+            </button>
+            <button id="google-signin-button" type="button" class="button button--md button--ghost">
+              <span id="google-signin-button-text">
+                Войти по Google аккаунту
+              </span>
+              <span id="google-signin-loader" class="loader loader-black opacity-0"></span>
+            </button>
+          </div>
+          <div>
+            <span>Нет аккаунта?</span>
+            <a href="#" id="show-signup" class="info-link auth__info-link">Регистрация</a>
+          </div>
+        </form>
+        <form id="signup-form" class="auth__form hidden">
+          <h3>Регистрация</h3>
+          <div class="auth__input">
+            <label for="signup-email">Email:</label>
+            <input id="signup-email" type="email" name="email" placeholder="email" required>
+          </div>
+          <div class="auth__input">
+            <label for="signup-password">Пароль:</label>
+            <input id="signup-password" type="password" name="password" placeholder="password" required>
+          </div>
+          <div class="auth__input">
+            <button id="signup-button" type="submit" class="button button--md button--primary">
+              <span id="signup-button-text">Зарегистрироваться</span>
+              <span id="signup-loader" class="loader loader-white opacity-0"></span>
+            </button>
+          </div>
+          <div>
+            <span>Есть аккаунт?</span>
+            <a href="#" id="show-signin" class="info-link auth__info-link">Войти</a>
+          </div>
+        </form>
+        <div id="error-message" class="error__inner hidden">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./scripts/index.js"></script>
+  <script type="module" src="./scripts/auth/auth.js"></script>
+</body>
+
+</html>
