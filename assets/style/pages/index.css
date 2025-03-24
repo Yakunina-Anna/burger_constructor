@@ -130,6 +130,11 @@
 .hidden-checkbox {
   display: none !important;
 }
+
+.block {
+  display: block;
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -159,6 +164,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.main__inner {
+  width: 100%;
 }
 
 .main__title {
@@ -268,4 +277,60 @@
   height: 100vh;
   max-width: 1560px;
   padding: 0 10px;
+}
+
+.burger-constructor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 600px;
+  padding: 0 10px;
+}
+
+.burger-constructor__content {
+  background: url("../../images/bg-constructor.png") no-repeat center;
+  width: 604px;
+  height: 100%;
+}
+
+.burger-constructor__inner {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.ingredient-wrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredient {
+  position: absolute;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.ingredient--small{
+  width: 50%;
+  height: auto;
+  top: 0;
+}
+.ingredient--small:nth-child(1) {
+  right: 0;
+}
+
+/* Нижняя булочка */
+.bun_bottom {
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Динамические ингредиенты */
+.burger-constructor_dynamic {
+  position: relative;
+z-index: 2;
 }

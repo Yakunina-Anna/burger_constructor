@@ -4,48 +4,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Make Your Burger</title>
   <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 
 <body>
   <div class="container">
-    <div class="container__main ">
-      <header class="header">
-        <div class="header__inner-left">
-          <div class="header__logo"></div>
-          <nav>
-            <ul class="header__list font-16">
-              <li class="header__item active_link">
-                <a href="./index.html" class="header__link">Discover</a>
-              </li>
-              <li class="header__item">
-                <a href="./about.html" class="header__link">Make Your Burger</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="header__inner-right">
-          <button id="logout-button" class="button button--red">Выйти</button>
-        </div>
-      </header>
-      <main class="main">
-        <div class="main__inner">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__inner-left">
+        <div class="header__logo"></div>
+        <nav>
+          <ul class="header__list font-16">
+            <li class="header__item active_link" data-tab="discover">
+              <a href="#" class="header__link">Discover</a>
+            </li>
+            <li class="header__item" data-tab="burger">
+              <a href="#" class="header__link">Make Your Burger</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__inner-right">
+        <button id="logout-button" class="button button--red">Выйти</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="main__inner" id="main-content">
+        <!-- Discover Tab -->
+        <div class="tab-content" id="discover-tab">
           <h2 class="main__title">Добро пожаловать</h2>
           <p class="main__text">Начните создание своего бургера</p>
-          <a href="./auth.html" class="button">Войти</a>
+          <a href="./auth.html" class="button">Войти</a>
         </div>
-      </main>
-      <footer class="footer">
-        <div class="footer__inner">
-          <p class="footer__text">© 2023 Make Your Burger</p>
-        </div>
-      </footer>
-    </div>
 
+        <!-- Make Your Burger Tab -->
+        <div class="tab-content" id="burger-tab">
+          <div class="burger-constructor">
+            <h2 class="burger-constructor__title">Make Your Burger</h2>
+            <div class="burger-constructor__content">
+              <div class="burger-constructor__inner">
+                <!-- Нижняя булочка -->
+                <img src="./assets/images/bun.png" alt="Bun Bottom" class="ingredient bun_bottom">
+                <!-- Контейнер для динамически добавляемых ингредиентов -->
+                <div class="burger-constructor_dynamic"></div>
+              </div>
+            </div>
+            <button class="button button--green">Создать бургер</button>
+          </div>
+          <div class="burger-constructor__controls">
+            <button class="button button--cheese" data-ingredient="cheese">Add Cheese</button>
+            <button class="button button--beef" data-ingredient="beef">Add Beef</button>
+            <button class="button button--salad" data-ingredient="salad">Add Salad</button>
+            <button class="button button--tomato" data-ingredient="tomato">Add Tomato</button>
+            <button class="button button--onion" data-ingredient="onion">Add Onion</button>
+            <button class="button button--cucumber" data-ingredient="cucumber">Add Cucumber</button>
+            <button class="button button--bun_middle" data-ingredient="bun_middle">Add Bun</button>
+            <button class="button button--mayo" data-ingredient="mayo">Add Mayo</button>
+          </div>
+          
+          <!-- Кнопки для удаления -->
+          <div class="burger-constructor__remove-controls">
+            <button class="button button--remove-cheese" data-remove="cheese">Remove Cheese</button>
+            <button class="button button--remove-beef" data-remove="beef">Remove Beef</button>
+            <button class="button button--remove-salad" data-remove="salad">Remove Salad</button>
+            <button class="button button--remove-tomato" data-remove="tomato">Remove Tomato</button>
+            <button class="button button--remove-onion" data-remove="onion">Remove Onion</button>
+            <button class="button button--remove-cucumber" data-remove="cucumber">Remove Cucumber</button>
+            <button class="button button--remove-bun_middle" data-remove="bun_middle">Remove Bun</button>
+            <button class="button button--remove-mayo" data-remove="mayo">Remove Mayo</button>
+          </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__text">© 2023 Make Your Burger</p>
+      </div>
+    </footer>
   </div>
+
   <script type="module" src="./scripts/index.js"></script>
-  <script type="module" src="./scripts/auth/auth.js"></script>
 </body>
 
 </html>
