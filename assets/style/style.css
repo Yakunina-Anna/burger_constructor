@@ -3,6 +3,7 @@
 @import "./base/_typography.css";
 @import "./base/_layout.css";
 
+@import "./pages/auth.css";
 @import "./pages/index.css";
 
 @import "./components/_button.css";
