@@ -1,6 +1,3 @@
-/* _button.css */
-
-/* Базовые стили кнопки */
 .button {
   display: inline-flex;
   align-items: center;
@@ -12,9 +9,13 @@
   border-radius: 99px; /* Скругление углов */
   cursor: pointer;
   text-decoration: none; /* Убираем подчеркивание для ссылок */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease, color 0.3s ease;
   padding: 0.75rem 1.5rem; /* Отступы по умолчанию */
   font-weight: 600;
+}
+
+.button svg {
+  margin-right: 6px;
 }
 
 .button--md {
@@ -24,20 +25,37 @@
 }
 
 .button--sm {
-  padding: 6px;
+  padding: 6px 8px;
   font-size: 16px;
   line-height: 20px;
 }
 
 .button--xs {
-  padding: 4px;
+  padding: 4px 6px;
   font-size: 14px;
   line-height: 20px;
+}
+
+.button--hero {
+  border-radius: 50%; /* Делаем кнопку круглой */
+  width: 180px; /* Фиксированная ширина */
+  height: 180px; /* Фиксированная высота */
+  padding: 0; /* Убираем отступы */
+  font-size: 24px; /* Размер текста внутри кнопки */
+  display: flex; /* Используем flexbox для центрирования */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  transition: transform 0.3s ease;
+}
+
+.button--hero:hover {
+  transform: scale(1.1); /* Увеличиваем размер на 10% */
 }
 
 .button--primary {
   background-color: var(--primary-color); /* Цвет фона */
   color: var(--white-color); /* Цвет текста */
+  fill: var(--white-color);
 }
 
 .button--primary:hover {
@@ -64,11 +82,13 @@
 .button--red {
   background-color: var(--red-200-color); /* Цвет фона */
   color: var(--red-500-color); /* Цвет текста */
+  fill:  var(--red-500-color);
 }
 
 .button--red:hover {
   background-color: var(--red-500-color); /* Цвет фона */
   color: var(--white-color); /* Цвет текста */
+  fill: var(--white-color);
 }
 
 .button--red:disabled {

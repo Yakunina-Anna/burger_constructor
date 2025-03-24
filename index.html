@@ -10,7 +10,7 @@
 
 <body>
   <div class="container">
-    <!-- Header -->
+    <div class="container__main ">
     <header class="header">
       <div class="header__inner-left">
         <div class="header__logo"></div>
@@ -29,54 +29,118 @@
         <button id="logout-button" class="button button--red">Выйти</button>
       </div>
     </header>
-
-    <!-- Main Content -->
     <main class="main">
       <div class="main__inner" id="main-content">
         <!-- Discover Tab -->
         <div class="tab-content" id="discover-tab">
-          <h2 class="main__title">Добро пожаловать</h2>
-          <p class="main__text">Начните создание своего бургера</p>
-          <a href="./auth.html" class="button">Войти</a>
+          <div class="main__preview">
+            <h1 class="main__title">Make Your Burger</h1>
+            <div class="main__image">
+              <img src="./assets/images/main-img.png" alt="main-image">
+            </div>
+            <button id="show-constructor" class="button button--hero button--primary main__button">make burger</button>
+          </div>
         </div>
-
-        <!-- Make Your Burger Tab -->
         <div class="tab-content" id="burger-tab">
           <div class="burger-constructor">
             <h2 class="burger-constructor__title">Make Your Burger</h2>
             <div class="burger-constructor__content">
               <div class="burger-constructor__inner">
+                <img src="./assets/images/bun_top.png" alt="Top Bun" class="ingredient bun_top hidden">
                 <!-- Нижняя булочка -->
                 <img src="./assets/images/bun.png" alt="Bun Bottom" class="ingredient bun_bottom">
                 <!-- Контейнер для динамически добавляемых ингредиентов -->
                 <div class="burger-constructor_dynamic"></div>
+
               </div>
             </div>
             <button class="button button--green">Создать бургер</button>
           </div>
+          <div class="burger-constructor__item">
+            <span class="ingredient-name">Beef</span>
+            <div class="burger-constructor__item-actions">
+              <button class="button button--add" data-action="add" data-ingredient="beef">+</button>
+              <span class="count">0</span> <!-- Счетчик количества -->
+              <button class="button button--remove" data-action="remove" data-ingredient="beef">-</button>
+            </div>
+          </div>
+          <!-- <div class="burger-constructor__controls">
+            <div class="burger-constructor__item">
+              <div  class="burger-constructor__item-image">
+                <img src="./assets/images/beef.png" alt="">
+              </div>
+              <p class="burger-constructor__item-title">Cutlet</p>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--beef" data-ingredient="beef">+</button>
+                2
+                <button class="button button--remove-beef" data-remove="beef">-</button>
+              </div>
+            </div>
+          </div> -->
           <div class="burger-constructor__controls">
-            <button class="button button--cheese" data-ingredient="cheese">Add Cheese</button>
-            <button class="button button--beef" data-ingredient="beef">Add Beef</button>
-            <button class="button button--salad" data-ingredient="salad">Add Salad</button>
-            <button class="button button--tomato" data-ingredient="tomato">Add Tomato</button>
-            <button class="button button--onion" data-ingredient="onion">Add Onion</button>
-            <button class="button button--cucumber" data-ingredient="cucumber">Add Cucumber</button>
-            <button class="button button--bun_middle" data-ingredient="bun_middle">Add Bun</button>
-            <button class="button button--mayo" data-ingredient="mayo">Add Mayo</button>
-          </div>
+            <div class="burger-constructor__item">
+              <span class="ingredient-name">Cheese</span>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--add" data-action="add" data-ingredient="cheese">+</button>
+                <span class="count">0</span> <!-- Счетчик количества -->
+                <button class="button button--remove" data-action="remove" data-ingredient="cheese">-</button>
+              </div>
+            </div>
           
-          <!-- Кнопки для удаления -->
-          <div class="burger-constructor__remove-controls">
-            <button class="button button--remove-cheese" data-remove="cheese">Remove Cheese</button>
-            <button class="button button--remove-beef" data-remove="beef">Remove Beef</button>
-            <button class="button button--remove-salad" data-remove="salad">Remove Salad</button>
-            <button class="button button--remove-tomato" data-remove="tomato">Remove Tomato</button>
-            <button class="button button--remove-onion" data-remove="onion">Remove Onion</button>
-            <button class="button button--remove-cucumber" data-remove="cucumber">Remove Cucumber</button>
-            <button class="button button--remove-bun_middle" data-remove="bun_middle">Remove Bun</button>
-            <button class="button button--remove-mayo" data-remove="mayo">Remove Mayo</button>
+            <div class="burger-constructor__item">
+              <span class="ingredient-name">Salad</span>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--add" data-action="add" data-ingredient="salad">+</button>
+                <span class="count">0</span>
+                <button class="button button--remove" data-action="remove" data-ingredient="salad">-</button>
+              </div>
+            </div>
+          
+            <div class="burger-constructor__item">
+              <span class="ingredient-name">Tomato</span>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--add" data-action="add" data-ingredient="tomato">+</button>
+                <span class="count">0</span>
+                <button class="button button--remove" data-action="remove" data-ingredient="tomato">-</button>
+              </div>
+            </div>
+          
+            <div class="burger-constructor__item">
+              <span class="ingredient-name">Onion</span>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--add" data-action="add" data-ingredient="onion">+</button>
+                <span class="count">0</span>
+                <button class="button button--remove" data-action="remove" data-ingredient="onion">-</button>
+              </div>
+            </div>
+          
+            <div class="burger-constructor__item">
+              <span class="ingredient-name">Cucumber</span>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--add" data-action="add" data-ingredient="cucumber">+</button>
+                <span class="count">0</span>
+                <button class="button button--remove" data-action="remove" data-ingredient="cucumber">-</button>
+              </div>
+            </div>
+          
+            <div class="burger-constructor__item">
+              <span class="ingredient-name">Bun Middle</span>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--add" data-action="add" data-ingredient="bun_middle">+</button>
+                <span class="count">0</span>
+                <button class="button button--remove" data-action="remove" data-ingredient="bun_middle">-</button>
+              </div>
+            </div>
+          
+            <div class="burger-constructor__item">
+              <span class="ingredient-name">Mayo</span>
+              <div class="burger-constructor__item-actions">
+                <button class="button button--add" data-action="add" data-ingredient="mayo">+</button>
+                <span class="count">0</span>
+                <button class="button button--remove" data-action="remove" data-ingredient="mayo">-</button>
+              </div>
+            </div>
           </div>
-        </div>
     </main>
 
     <!-- Footer -->
@@ -86,7 +150,7 @@
       </div>
     </footer>
   </div>
-
+</div>
   <script type="module" src="./scripts/index.js"></script>
 </body>
 

@@ -1,17 +1,17 @@
 export function initBurgerConstructor() {
   const dynamicContainer = document.querySelector('.burger-constructor_dynamic');
-  const buttons = document.querySelectorAll('.burger-constructor__controls button');
-  const removeButtons = document.querySelectorAll('.burger-constructor__remove-controls button');
-
   const bunBottom = document.querySelector('.bun_bottom');
-  const containerHeight = 520;
+  const bunTop = document.querySelector('.bun_top');
+
+  const containerHeight = 570;
 
   const ingredientHeights = {
     cheese: 2,
     beef: 15,
     salad: 15,
     tomato: 28,
-    bun_middle: 30,
+    bun_middle: 25,
+    bun_top: 20,
     mayo: 2,
     cucumber: 28,
     onion: 28,
@@ -23,18 +23,32 @@ export function initBurgerConstructor() {
 
   const addedIngredients = [];
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const ingredientType = button.dataset.ingredient;
-      addIngredient(ingredientType);
-    });
-  });
+  // Делегирование событий для кнопок "+" и "-"
+  document.addEventListener('click', (event) => {
+    const target = event.target;
 
-  removeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const ingredientType = button.dataset.remove;
+    // Проверяем, является ли цель кнопкой "+"
+    if (target.matches('.button--add')) {
+      const ingredientType = target.dataset.ingredient;
+      addIngredient(ingredientType);
+
+      // Обновляем счетчик
+      const countElement = target.nextElementSibling;
+      countElement.textContent = parseInt(countElement.textContent) + 1;
+    }
+
+    // Проверяем, является ли цель кнопкой "-"
+    if (target.matches('.button--remove')) {
+      const ingredientType = target.dataset.ingredient;
       removeIngredient(ingredientType);
-    });
+
+      // Обновляем счетчик
+      const countElement = target.previousElementSibling;
+      const currentCount = parseInt(countElement.textContent);
+      if (currentCount > 0) {
+        countElement.textContent = currentCount - 1;
+      }
+    }
   });
 
   function addIngredient(type) {
@@ -71,7 +85,7 @@ export function initBurgerConstructor() {
       additionalOffset = 5;
     }
     if (['tomato', 'onion', 'cucumber'].includes(lastIngredientType)) {
-      additionalOffset = -5;
+      additionalOffset = -7;
     }
 
     if (isFirstIngredient) {
@@ -81,40 +95,56 @@ export function initBurgerConstructor() {
 
     currentHeight -= ingredientHeights[type] + additionalOffset;
     ingredientWrapper.style.top = `${currentHeight}px`;
+    ingredientWrapper.classList.add('fade-in');
     dynamicContainer.appendChild(ingredientWrapper);
     addedIngredients.push({ type, wrapper: ingredientWrapper });
     lastIngredientType = type;
+    checkAndAddTopBun();
   }
 
   function removeIngredient(type) {
     for (let i = addedIngredients.length - 1; i >= 0; i--) {
       if (addedIngredients[i].type === type) {
         const removedIngredient = addedIngredients.splice(i, 1)[0];
-        removedIngredient.wrapper.remove();
+        removedIngredient.wrapper.classList.remove('fade-in');
+        removedIngredient.wrapper.classList.add('fade-out');
 
-        currentHeight = containerHeight;
-        let lastType = null;
+        setTimeout(() => {
+          removedIngredient.wrapper.remove();
 
-        addedIngredients.forEach((ingredient) => {
-          let additionalOffset = 0;
+          currentHeight = containerHeight;
+          let lastType = null;
 
-          if (lastType === 'cheese') {
-            additionalOffset += 8;
-          }
-          if (lastType === 'mayo') {
-            additionalOffset += 5;
-          }
-          if (['tomato', 'onion', 'cucumber'].includes(lastType)) {
-            additionalOffset -= 5;
-          }
+          addedIngredients.forEach((ingredient) => {
+            let additionalOffset = 0;
 
-          currentHeight -= ingredientHeights[ingredient.type] + additionalOffset;
-          ingredient.wrapper.style.top = `${currentHeight}px`;
-          lastType = ingredient.type;
-        });
+            if (lastType === 'cheese') {
+              additionalOffset += 8;
+            }
+            if (lastType === 'mayo') {
+              additionalOffset += 5;
+            }
+            if (['tomato', 'onion', 'cucumber'].includes(lastType)) {
+              additionalOffset -= 5;
+            }
+
+            currentHeight -= ingredientHeights[ingredient.type] + additionalOffset;
+            ingredient.wrapper.style.top = `${currentHeight}px`;
+            lastType = ingredient.type;
+            checkAndAddTopBun();
+          });
+        }, 300);
 
         break;
       }
+    }
+  }
+
+  function checkAndAddTopBun() {
+    if (addedIngredients.length >= 5) {
+      bunTop.classList.remove('hidden');
+    } else if (addedIngredients.length < 5) {
+      bunTop.classList.add('hidden');
     }
   }
 }
