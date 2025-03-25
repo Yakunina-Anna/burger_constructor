@@ -11,146 +11,243 @@
 <body>
   <div class="container">
     <div class="container__main ">
-    <header class="header">
-      <div class="header__inner-left">
-        <div class="header__logo"></div>
-        <nav>
-          <ul class="header__list font-16">
-            <li class="header__item active_link" data-tab="discover">
-              <a href="#" class="header__link">Discover</a>
-            </li>
-            <li class="header__item" data-tab="burger">
-              <a href="#" class="header__link">Make Your Burger</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header__inner-right">
-        <button id="logout-button" class="button button--red">Выйти</button>
-      </div>
-    </header>
-    <main class="main">
-      <div class="main__inner" id="main-content">
-        <!-- Discover Tab -->
-        <div class="tab-content" id="discover-tab">
-          <div class="main__preview">
-            <h1 class="main__title">Make Your Burger</h1>
-            <div class="main__image">
-              <img src="./assets/images/main-img.png" alt="main-image">
+      <header class="header">
+        <div class="header__inner-left">
+          <div class="header__logo"></div>
+          <nav>
+            <ul class="header__list font-16">
+              <li class="header__item active_link" data-tab="discover">
+                <a href="#" class="header__link">Discover</a>
+              </li>
+              <li class="header__item" data-tab="burger">
+                <a href="#" class="header__link">Make Your Burger</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__inner-right">
+          <button id="logout-button" class="button button--red">Выйти</button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="main__inner" id="main-content">
+          <!-- Discover Tab -->
+          <div class="tab-content" id="discover-tab">
+            <div class="main__preview">
+              <h1 class="main__title">Make Your Burger</h1>
+              <div class="main__image">
+                <img src="./assets/images/main-img.png" alt="main-image">
+              </div>
+              <button id="show-constructor" class="button button--hero button--primary main__button">make
+                burger</button>
             </div>
-            <button id="show-constructor" class="button button--hero button--primary main__button">make burger</button>
+          </div>
+          <div class="tab-content" id="burger-tab">
+            <div class="burger-constructor">
+              <h1 class="burger-constructor__title">Make Your Burger</h1>
+              <div class="burger-constructor__content">
+                <div class="burger-constructor__inner">
+                  <img src="./assets/images/bun_top.png" alt="Top Bun" class="ingredient bun_top hidden">
+                  <img src="./assets/images/bun.png" alt="Bun Bottom" class="ingredient bun_bottom">
+                  <div class="burger-constructor_dynamic"></div>
+                </div>
+              </div>
+              <div class="burger-constructor__summary">
+                <h3 class="burger-constructor__summary-title">Summary</h3>
+                <div class="burger-constructor__summary-line"></div>
+                <div class="burger-constructor__summary-content">
+                  <p id="total-cost" class="font-36 burger-constructor__summary-price">$0.00</p>
+                  <button class="button button--primary button--md">Checkout</button>
+                  <p class="font-14 burger-constructor__summary-descr">Build a <span class="font-14-semibold"
+                      style="color:var(--red-500-color)">$10</span> Burger and Get a Gift</p>
+                </div>
+                <div class="burger-constructor__summary-info">
+                  <div class="burger-constructor__summary-info-item">
+                    <div class="burger-constructor__summary-info-icon" style="background-color: #B956F5;">
+                      <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Vector"
+                          d="M8 0C3.58 0 0 3.58 0 8C0 12.41 3.58 16 8 16C12.41 16 16 12.41 16 8C16 3.58 12.41 0 8 0ZM11.8 12.13C11.67 12.26 11.5 12.33 11.33 12.33C11.16 12.33 10.99 12.26 10.86 12.13L7.52 8.8C7.4 8.68 7.33 8.51 7.33 8.33L7.33 4C7.33 3.63 7.63 3.33 8 3.33C8.36 3.33 8.66 3.63 8.66 4L8.66 8.05L11.8 11.19C12.06 11.45 12.06 11.87 11.8 12.13Z"
+                          fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                      </svg>
+                    </div>
+                    <p id="total-time" class="font-14-semibold">0 min</p>
+                  </div>
+                  <div class="burger-constructor__summary-info-item">
+                    <div class="burger-constructor__summary-info-icon" style="background-color: #F58F56;">
+                      <svg width="16.000000" height="14.334229" viewBox="0 0 16 14.3342" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Vector"
+                          d="M15.44 0.69C15.03 0.21 14.48 -0.06 13.87 0.01L2.07 0.01C0.84 0.01 -0.18 1.16 0.02 2.39L1.66 12.62C1.79 13.65 2.68 14.33 3.7 14.33L12.3 14.33C13.32 14.33 14.21 13.58 14.35 12.62L15.98 2.39C16.05 1.78 15.85 1.16 15.44 0.69ZM9.43 8.87C9.23 8.67 9.02 8.53 8.75 8.46L9.3 5.73L7.93 5.46L7.32 8.4C7.05 8.46 6.77 8.67 6.5 8.87L3.09 5.53C5.75 2.87 10.05 2.87 12.71 5.53L9.43 8.87Z"
+                          fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                      </svg>
+                    </div>
+                    <p id="total-weight" class="font-14-semibold">0 oz</p>
+                  </div>
+                  <div class="burger-constructor__summary-info-item">
+                    <div class="burger-constructor__summary-info-icon" style="background-color: var(--red-500-color);">
+                      <svg width="14.000000" height="20.000000" viewBox="0 0 14 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <desc>
+                          Created with Pixso.
+                        </desc>
+                        <defs />
+                        <path id="Vector"
+                          d="M8.75 0C4.77 2.45 5.25 9.37 5.25 9.37C5.25 9.37 3.5 8.75 3.5 5.93C1.41 7.23 0 9.72 0 12.5C0 16.64 3.13 20 7 20C10.86 20 14 16.64 14 12.5C14 6.4 8.75 5.15 8.75 0ZM7.61 17.41C6.2 17.79 4.78 16.87 4.43 15.36C4.08 13.86 4.93 12.33 6.34 11.95C9.74 11.05 10.16 9 10.16 9C10.16 9 11.85 16.28 7.61 17.41Z"
+                          fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                      </svg>
+
+                    </div>
+                    <p id="total-calories" class="font-14-semibold">0 kcal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="burger-constructor__controls">
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/beef.png" alt="Beef">
+                </div>
+                <p class="font-14-semibold">Beef</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="beef">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="beef">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/cheese.png" alt="Cheese">
+                </div>
+                <p class="font-14-semibold">Cheese</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="cheese">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="cheese">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/salad.png" alt="Salad">
+                </div>
+                <p class="font-14-semibold">Salad</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="salad">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="salad">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/tomato.png" alt="Tomato">
+                </div>
+                <p class="font-14-semibold">Tomato</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="tomato">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="tomato">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/onion.png" alt="Onion">
+                </div>
+                <p class="font-14-semibold">Onion</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="onion">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="onion">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/cucumber.png" alt="Cucumber">
+                </div>
+                <p class="font-14-semibold">Cucumber</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="cucumber">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="cucumber">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/bun_middle.png" alt="Middle Bun">
+                </div>
+                <p class="font-14-semibold">Bun Middle</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="bun_middle">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="bun_middle">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/mayo.png" alt="Mayo">
+                </div>
+                <p class="font-14-semibold">Mayo</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                    data-ingredient="mayo">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
+                    data-ingredient="mayo">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="tab-content" id="burger-tab">
-          <div class="burger-constructor">
-            <h2 class="burger-constructor__title">Make Your Burger</h2>
-            <div class="burger-constructor__content">
-              <div class="burger-constructor__inner">
-                <img src="./assets/images/bun_top.png" alt="Top Bun" class="ingredient bun_top hidden">
-                <!-- Нижняя булочка -->
-                <img src="./assets/images/bun.png" alt="Bun Bottom" class="ingredient bun_bottom">
-                <!-- Контейнер для динамически добавляемых ингредиентов -->
-                <div class="burger-constructor_dynamic"></div>
-
-              </div>
-            </div>
-            <button class="button button--green">Создать бургер</button>
-          </div>
-          <div class="burger-constructor__item">
-            <span class="ingredient-name">Beef</span>
-            <div class="burger-constructor__item-actions">
-              <button class="button button--add" data-action="add" data-ingredient="beef">+</button>
-              <span class="count">0</span> <!-- Счетчик количества -->
-              <button class="button button--remove" data-action="remove" data-ingredient="beef">-</button>
-            </div>
-          </div>
-          <!-- <div class="burger-constructor__controls">
-            <div class="burger-constructor__item">
-              <div  class="burger-constructor__item-image">
-                <img src="./assets/images/beef.png" alt="">
-              </div>
-              <p class="burger-constructor__item-title">Cutlet</p>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--beef" data-ingredient="beef">+</button>
-                2
-                <button class="button button--remove-beef" data-remove="beef">-</button>
-              </div>
-            </div>
-          </div> -->
-          <div class="burger-constructor__controls">
-            <div class="burger-constructor__item">
-              <span class="ingredient-name">Cheese</span>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--add" data-action="add" data-ingredient="cheese">+</button>
-                <span class="count">0</span> <!-- Счетчик количества -->
-                <button class="button button--remove" data-action="remove" data-ingredient="cheese">-</button>
-              </div>
-            </div>
-          
-            <div class="burger-constructor__item">
-              <span class="ingredient-name">Salad</span>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--add" data-action="add" data-ingredient="salad">+</button>
-                <span class="count">0</span>
-                <button class="button button--remove" data-action="remove" data-ingredient="salad">-</button>
-              </div>
-            </div>
-          
-            <div class="burger-constructor__item">
-              <span class="ingredient-name">Tomato</span>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--add" data-action="add" data-ingredient="tomato">+</button>
-                <span class="count">0</span>
-                <button class="button button--remove" data-action="remove" data-ingredient="tomato">-</button>
-              </div>
-            </div>
-          
-            <div class="burger-constructor__item">
-              <span class="ingredient-name">Onion</span>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--add" data-action="add" data-ingredient="onion">+</button>
-                <span class="count">0</span>
-                <button class="button button--remove" data-action="remove" data-ingredient="onion">-</button>
-              </div>
-            </div>
-          
-            <div class="burger-constructor__item">
-              <span class="ingredient-name">Cucumber</span>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--add" data-action="add" data-ingredient="cucumber">+</button>
-                <span class="count">0</span>
-                <button class="button button--remove" data-action="remove" data-ingredient="cucumber">-</button>
-              </div>
-            </div>
-          
-            <div class="burger-constructor__item">
-              <span class="ingredient-name">Bun Middle</span>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--add" data-action="add" data-ingredient="bun_middle">+</button>
-                <span class="count">0</span>
-                <button class="button button--remove" data-action="remove" data-ingredient="bun_middle">-</button>
-              </div>
-            </div>
-          
-            <div class="burger-constructor__item">
-              <span class="ingredient-name">Mayo</span>
-              <div class="burger-constructor__item-actions">
-                <button class="button button--add" data-action="add" data-ingredient="mayo">+</button>
-                <span class="count">0</span>
-                <button class="button button--remove" data-action="remove" data-ingredient="mayo">-</button>
-              </div>
-            </div>
-          </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer__inner">
-        <p class="footer__text">© 2023 Make Your Burger</p>
-      </div>
-    </footer>
+      </main>
+      <footer class="footer">
+        <div class="footer__inner">
+          <p class="footer__text">© 2023 Make Your Burger</p>
+        </div>
+      </footer>
+    </div>
   </div>
-</div>
   <script type="module" src="./scripts/index.js"></script>
 </body>
 

@@ -1,3 +1,6 @@
+/**
+ * Инициализирует переключение вкладок (табов) в интерфейсе.
+ */
 export function initTabs() {
   const headerLinks = document.querySelectorAll('.header__item');
   const tabContents = document.querySelectorAll('.tab-content');

@@ -2,16 +2,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: inherit; /* Наследуем шрифт */
-  font-size: 1rem; /* Размер по умолчанию */
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: 500;
   border: none;
-  border-radius: 99px; /* Скругление углов */
+  border-radius: 99px;
   cursor: pointer;
-  text-decoration: none; /* Убираем подчеркивание для ссылок */
+  text-decoration: none;
   transition: all 0.3s ease, color 0.3s ease;
-  padding: 0.75rem 1.5rem; /* Отступы по умолчанию */
+  padding: 0.75rem 1.5rem;
   font-weight: 600;
+}
+
+.button--circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.2rem;
 }
 
 .button svg {
@@ -31,68 +42,68 @@
 }
 
 .button--xs {
-  padding: 4px 6px;
+  padding: 6px 6px;
   font-size: 14px;
   line-height: 20px;
 }
 
 .button--hero {
-  border-radius: 50%; /* Делаем кнопку круглой */
-  width: 180px; /* Фиксированная ширина */
-  height: 180px; /* Фиксированная высота */
-  padding: 0; /* Убираем отступы */
-  font-size: 24px; /* Размер текста внутри кнопки */
-  display: flex; /* Используем flexbox для центрирования */
-  align-items: center; /* Вертикальное центрирование */
-  justify-content: center; /* Горизонтальное центрирование */
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  padding: 0;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease;
 }
 
 .button--hero:hover {
-  transform: scale(1.1); /* Увеличиваем размер на 10% */
+  transform: scale(1.1);
 }
 
 .button--primary {
-  background-color: var(--primary-color); /* Цвет фона */
-  color: var(--white-color); /* Цвет текста */
+  background-color: var(--primary-color);
+  color: var(--white-color);
   fill: var(--white-color);
 }
 
 .button--primary:hover {
-  background-color: var(--indigo-600-color); /* Цвет фона */
-}
-
-.button--primary:disabled, .button--ghost:disabled {
-  background-color: var(--titan-white-color);
-  color: var(--muted-color);
-  cursor: not-allowed;
+  background-color: var(--indigo-600-color);
 }
 
 .button--ghost {
-  background-color: var(--titan-white-color); /* Цвет фона */
-  color: var(--primary-color); /* Цвет текста */
+  background-color: var(--titan-white-color);
+  color: var(--primary-color);
 }
 
 .button--ghost:hover {
-  background-color: var(--indigo-600-color); /* Цвет фона */
-  background-color: var(--primary-color); /* Цвет фона */
-  color: var(--white-color); /* Цвет текста */
+  background-color: var(--indigo-600-color);
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 
 .button--red {
-  background-color: var(--red-200-color); /* Цвет фона */
-  color: var(--red-500-color); /* Цвет текста */
+  background-color: var(--red-200-color);
+  color: var(--red-500-color);
   fill:  var(--red-500-color);
 }
 
 .button--red:hover {
-  background-color: var(--red-500-color); /* Цвет фона */
-  color: var(--white-color); /* Цвет текста */
+  background-color: var(--red-500-color);
+  color: var(--white-color);
   fill: var(--white-color);
 }
 
-.button--red:disabled {
+.button--red[disabled] {
   background-color: var(--red-200-color);
   color: var(--red-300-color);
+  cursor: not-allowed;
+}
+
+.button--primary[disabled], .button--ghost[disabled] {
+  background-color: var(--titan-white-color);
+  color: var(--muted-color);
   cursor: not-allowed;
 }
