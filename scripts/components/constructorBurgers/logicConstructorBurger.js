@@ -1,6 +1,7 @@
 import { ingredientsData } from '../../data/ingredientsData.js';
 import { updateTotals } from './totalsCalculatorBurger.js';
 import { updateBunTopPosition } from './uiComponentsBurger.js';
+import { calculateAdditionalOffset } from '../../utils/helpers.js';
 
 /**
  * Инициализирует конструктор бургера.
@@ -18,12 +19,11 @@ export function initBurgerConstructor() {
   const maxBurgerHeight = window.innerHeight - 100;
   let currentHeight = containerHeight - bunBottom.offsetHeight;
 
-  let lastIngredientType = null;
+  let lastIngredientType = null; // Тип последнего добавленного ингредиента
   let isFirstIngredient = true;
 
   const addedIngredients = [];
   const ingredientCounts = {};
-
 
   Object.keys(ingredientsData).forEach((ingredient) => {
     ingredientCounts[ingredient] = 0;
@@ -108,19 +108,22 @@ export function initBurgerConstructor() {
       ingredientWrapper.appendChild(ingredient);
     }
 
-    const additionalOffset = calculateAdditionalOffset(lastIngredient.type);
+    // Вычисляем дополнительный отступ на основе типа последнего ингредиента
+    const additionalOffset = calculateAdditionalOffset(lastIngredientType);
 
-    if (isFirstIngredient) {
-      additionalOffset -= 5;
-      isFirstIngredient = false;
-    }
+    // Корректировка для первого ингредиента
+    let firstIngredientOffset = isFirstIngredient ? -5 : 0;
+    isFirstIngredient = false;
 
-    currentHeight -= ingredientsData[type].height + additionalOffset;
+    // Обновляем текущую высоту
+    currentHeight -= ingredientsData[type].height + additionalOffset + firstIngredientOffset;
     ingredientWrapper.style.top = `${currentHeight}px`;
     ingredientWrapper.classList.add('fade-in');
     dynamicContainer.appendChild(ingredientWrapper);
+
+    // Добавляем ингредиент в массив и обновляем тип последнего ингредиента
     addedIngredients.push({ type, wrapper: ingredientWrapper });
-    lastIngredientType = type;
+    lastIngredientType = type; // Обновляем тип последнего ингредиента
   }
 
   /**
@@ -137,16 +140,19 @@ export function initBurgerConstructor() {
         setTimeout(() => {
           removedIngredient.wrapper.remove();
 
+          // Пересчитываем высоту после удаления
           currentHeight = containerHeight;
           let lastType = null;
 
           addedIngredients.forEach((ingredient) => {
             const additionalOffset = calculateAdditionalOffset(lastType);
-
             currentHeight -= ingredientsData[ingredient.type].height + additionalOffset;
             ingredient.wrapper.style.top = `${currentHeight}px`;
             lastType = ingredient.type;
           });
+
+          // Обновляем тип последнего ингредиента
+          lastIngredientType = lastType;
 
           updateBunTopPosition(currentHeight, addedIngredients);
         }, 300);
@@ -168,5 +174,4 @@ export function initBurgerConstructor() {
     }
     return false;
   }
-
 }
