@@ -57,7 +57,7 @@
                 <div class="burger-constructor__summary-line"></div>
                 <div class="burger-constructor__summary-content">
                   <p id="total-cost" class="font-36 burger-constructor__summary-price">$0.00</p>
-                  <button class="button button--primary button--md">Checkout</button>
+                  <button id="checkout-button" class="button button--primary button--md">Checkout</button>
                   <p class="font-14 burger-constructor__summary-descr">Build a <span class="font-14-semibold"
                       style="color:var(--red-500-color)">$10</span> Burger and Get a Gift</p>
                 </div>
@@ -246,6 +246,86 @@
           <p class="footer__text">© 2023 Make Your Burger</p>
         </div>
       </footer>
+    </div>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <div class="modal__title">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 20C14.12 20 16.15 19.15 17.65 17.65C19.15 16.15 20 14.12 20 12C20 9.87 19.15 7.84 17.65 6.34C16.15 4.84 14.12 4 12 4C9.87 4 7.84 4.84 6.34 6.34C4.84 7.84 4 9.87 4 12C4 14.12 4.84 16.15 6.34 17.65C7.84 19.15 9.87 20 12 20ZM12 22C6.47 22 2 17.52 2 12C2 6.47 6.47 2 12 2C17.52 2 22 6.47 22 12C22 17.52 17.52 22 12 22ZM12 14C11.46 14 10.96 13.78 10.58 13.41C10.21 13.03 10 12.53 10 12C10 11.46 10.21 10.96 10.58 10.58C10.96 10.21 11.46 10 12 10C12.53 10 13.03 10.21 13.41 10.58C13.78 10.96 14 11.46 14 12C14 12.53 13.78 13.03 13.41 13.41C13.03 13.78 12.53 14 12 14Z"
+              fill="#1F2939" fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+          <h5>Checkout</h5>
+        </div>
+        <div class="modal__close">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 10.58L16.95 5.63L18.36 7.05L13.41 12L18.36 16.95L16.95 18.36L12 13.41L7.04 18.36L5.63 16.95L10.58 12L5.63 7.05L7.04 5.63L12 10.58Z"
+              fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+        </div>
+      </div>
+      <form id="checkout-form" class="modal__checkout-form">
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 18.33C5.39 18.33 1.66 14.6 1.66 10C1.66 5.39 5.39 1.66 10 1.66C14.6 1.66 18.33 5.39 18.33 10C18.33 14.6 14.6 18.33 10 18.33ZM10 16.66C11.76 16.66 13.46 15.96 14.71 14.71C15.96 13.46 16.66 11.76 16.66 10C16.66 8.23 15.96 6.53 14.71 5.28C13.46 4.03 11.76 3.33 10 3.33C8.23 3.33 6.53 4.03 5.28 5.28C4.03 6.53 3.33 8.23 3.33 10C3.33 11.76 4.03 13.46 5.28 14.71C6.53 15.96 8.23 16.66 10 16.66ZM5.83 10.83L7.5 10.83C7.5 11.49 7.76 12.13 8.23 12.6C8.7 13.07 9.33 13.33 10 13.33C10.66 13.33 11.29 13.07 11.76 12.6C12.23 12.13 12.5 11.49 12.5 10.83L14.16 10.83C14.16 11.93 13.72 12.99 12.94 13.77C12.16 14.56 11.1 15 10 15C8.89 15 7.83 14.56 7.05 13.77C6.27 12.99 5.83 11.93 5.83 10.83ZM6.66 9.16C6.33 9.16 6.01 9.03 5.78 8.8C5.54 8.56 5.41 8.24 5.41 7.91C5.41 7.58 5.54 7.26 5.78 7.03C6.01 6.79 6.33 6.66 6.66 6.66C6.99 6.66 7.31 6.79 7.55 7.03C7.78 7.26 7.91 7.58 7.91 7.91C7.91 8.24 7.78 8.56 7.55 8.8C7.31 9.03 6.99 9.16 6.66 9.16ZM13.33 9.16C13 9.16 12.68 9.03 12.44 8.8C12.21 8.56 12.08 8.24 12.08 7.91C12.08 7.58 12.21 7.26 12.44 7.03C12.68 6.79 13 6.66 13.33 6.66C13.66 6.66 13.98 6.79 14.21 7.03C14.45 7.26 14.58 7.58 14.58 7.91C14.58 8.24 14.45 8.56 14.21 8.8C13.98 9.03 13.66 9.16 13.33 9.16Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="text" id="name" name="name" class="custom-input input-with-icon" required />
+            <label for="name" class="floating-label">Your Name</label>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.5 13.68L17.5 16.62C17.5 16.84 17.42 17.04 17.27 17.19C17.13 17.35 16.93 17.44 16.72 17.46C16.36 17.48 16.06 17.5 15.83 17.5C8.46 17.5 2.5 11.53 2.5 4.16C2.5 3.93 2.51 3.63 2.53 3.27C2.55 3.06 2.64 2.86 2.8 2.72C2.95 2.57 3.15 2.5 3.37 2.5L6.31 2.5C6.42 2.5 6.51 2.53 6.59 2.6C6.67 2.67 6.72 2.77 6.73 2.87C6.75 3.06 6.76 3.21 6.78 3.33C6.95 4.49 7.28 5.61 7.79 6.66C7.87 6.83 7.81 7.03 7.66 7.14L5.87 8.42C6.97 10.98 9.01 13.03 11.57 14.12L12.85 12.33C12.91 12.26 12.98 12.2 13.07 12.18C13.16 12.16 13.25 12.17 13.33 12.21C14.38 12.71 15.51 13.05 16.66 13.21C16.78 13.23 16.93 13.25 17.12 13.26C17.22 13.27 17.32 13.32 17.39 13.4C17.46 13.48 17.5 13.58 17.5 13.68L17.5 13.68Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="tel" id="phone" name="phone" class="custom-input input-with-icon" required />
+            <label for="phone" class="floating-label">Phone Number</label>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.33 12.5L3.33 7.08C3.33 6.08 3.72 5.13 4.43 4.43C5.13 3.72 6.08 3.33 7.08 3.33C8.07 3.33 9.03 3.72 9.73 4.43C10.43 5.13 10.83 6.08 10.83 7.08L10.83 12.91C10.83 13.46 11.05 13.99 11.44 14.38C11.83 14.78 12.36 15 12.91 15C13.46 15 13.99 14.78 14.38 14.38C14.78 13.99 15 13.46 15 12.91L15 7.35C14.44 7.16 13.97 6.77 13.67 6.26C13.37 5.75 13.26 5.15 13.36 4.57C13.46 3.99 13.77 3.46 14.22 3.08C14.67 2.7 15.24 2.49 15.83 2.49C16.42 2.49 16.99 2.7 17.44 3.08C17.89 3.46 18.19 3.99 18.29 4.57C18.39 5.15 18.28 5.75 17.99 6.26C17.69 6.77 17.22 7.16 16.66 7.35L16.66 12.91C16.66 13.91 16.27 14.86 15.56 15.56C14.86 16.27 13.91 16.66 12.91 16.66C11.92 16.66 10.96 16.27 10.26 15.56C9.56 14.86 9.16 13.91 9.16 12.91L9.16 7.08C9.16 6.53 8.94 6 8.55 5.61C8.16 5.21 7.63 5 7.08 5C6.53 5 6 5.21 5.61 5.61C5.21 6 5 6.53 5 7.08L5 12.5L7.5 12.5L4.16 16.66L0.83 12.5L3.33 12.5ZM15.83 5.83C16.05 5.83 16.26 5.74 16.42 5.58C16.57 5.43 16.66 5.22 16.66 5C16.66 4.77 16.57 4.56 16.42 4.41C16.26 4.25 16.05 4.16 15.83 4.16C15.61 4.16 15.4 4.25 15.24 4.41C15.08 4.56 15 4.77 15 5C15 5.22 15.08 5.43 15.24 5.58C15.4 5.74 15.61 5.83 15.83 5.83Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="text" id="address" name="address" class="custom-input input-with-icon" required />
+            <label for="address" class="floating-label">Address</label>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <select id="delivery-time" name="delivery-time" class="custom-select">
+          </select>
+          <label for="delivery-time" class="floating-label">Delivery Time</label>
+        </div>
+        <div class="modal__actions">
+          <button class="button button--ghost button--md modal__close" type="reset">Cancel</button>
+          <button class="button button--primary button--md" type="submit">Submit</button>
+        </div>
+      </form>
+
+    </div>
+    <div id="toast" class="toast">
+      <div class="toast__content"></div>
     </div>
   </div>
   <script type="module" src="./scripts/index.js"></script>
