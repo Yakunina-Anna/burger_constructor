@@ -2,14 +2,18 @@
 @import "./base/_reset.css";
 @import "./base/_typography.css";
 @import "./base/_layout.css";
+@import "./base/_animations.css";
 
-@import "./pages/index.css";
+/* @import "./pages/index.css"; */
 
 @import "./components/_button.css";
 @import "./components/_form.css";
 @import "./components/_modal.css";
 @import "./components/_toast.css";
+@import "./components/_main-container.css";
+@import "./components/_burger-constructor.css";
 @import "../fonts/fonts.css";
+
 
 * {
   margin: 0;

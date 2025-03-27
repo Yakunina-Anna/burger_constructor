@@ -27,14 +27,17 @@ export function updateBunTopPosition(currentHeight, addedIngredients) {
   const bunTop = document.querySelector('.bun_top');
 
   if (addedIngredients.length >= 3) {
-    bunTop.classList.remove('hidden');
-
+    const isMiniTablet = window.innerWidth <= 1024;
+    bunTop.classList.remove('fade-out', 'hidden');
+    bunTop.classList.add('fade-in');
     const lastIngredient = addedIngredients[addedIngredients.length - 1];
     const additionalOffset = calculateAdditionalOffset(lastIngredient.type);
 
-    const bunTopPosition = currentHeight - additionalOffset - 130;
+    const bunTopPosition = isMiniTablet ? currentHeight - additionalOffset - 125 : currentHeight - additionalOffset - 163;
     bunTop.style.top = `${bunTopPosition}px`;
   } else {
-    bunTop.classList.add('hidden');
+    bunTop.classList.remove('fade-in')
+    bunTop.classList.add('fade-out');
+    setTimeout(() => { bunTop.classList.add('hidden'); }, 300)
   }
 }

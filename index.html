@@ -31,14 +31,13 @@
       </header>
       <main class="main">
         <div class="main__inner" id="main-content">
-          <!-- Discover Tab -->
           <div class="tab-content" id="discover-tab">
             <div class="main__preview">
               <h1 class="main__title">Make Your Burger</h1>
               <div class="main__image">
                 <img src="./assets/images/main-img.png" alt="main-image">
               </div>
-              <button id="show-constructor" class="button button--hero button--primary main__button">make
+              <button id="go-to-constructor" class="button button--hero button--primary main__button">make
                 burger</button>
             </div>
           </div>
@@ -47,6 +46,9 @@
               <h1 class="burger-constructor__title">Make Your Burger</h1>
               <div class="burger-constructor__content">
                 <div class="burger-constructor__inner">
+                   <div class="burger-constructor__ketchup-image hidden">
+                    <img src="./assets/images/ketchup.png" alt="Ketchup">
+                  </div>
                   <img src="./assets/images/bun_top.png" alt="Top Bun" class="ingredient bun_top hidden">
                   <img src="./assets/images/bun.png" alt="Bun Bottom" class="ingredient bun_bottom">
                   <div class="burger-constructor_dynamic"></div>
@@ -88,10 +90,6 @@
                     <div class="burger-constructor__summary-info-icon" style="background-color: var(--red-500-color);">
                       <svg width="14.000000" height="20.000000" viewBox="0 0 14 20" fill="none"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <desc>
-                          Created with Pixso.
-                        </desc>
-                        <defs />
                         <path id="Vector"
                           d="M8.75 0C4.77 2.45 5.25 9.37 5.25 9.37C5.25 9.37 3.5 8.75 3.5 5.93C1.41 7.23 0 9.72 0 12.5C0 16.64 3.13 20 7 20C10.86 20 14 16.64 14 12.5C14 6.4 8.75 5.15 8.75 0ZM7.61 17.41C6.2 17.79 4.78 16.87 4.43 15.36C4.08 13.86 4.93 12.33 6.34 11.95C9.74 11.05 10.16 9 10.16 9C10.16 9 11.85 16.28 7.61 17.41Z"
                           fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
@@ -100,6 +98,9 @@
                     </div>
                     <p id="total-calories" class="font-14-semibold">0 kcal</p>
                   </div>
+                </div>
+                <div class="burger-constructor__controls burger-constructor__left">
+                  <p id="ketchup-button" class="burger-constructor__ketchup font-20-semibold">+ Tomato Ketchup 0.2 oz</p>
                 </div>
               </div>
             </div>
@@ -324,11 +325,10 @@
       </form>
 
     </div>
-    <div id="toast" class="toast">
-      <div class="toast__content"></div>
-    </div>
+  </div>
+  <div id="toast" class="toast">
+    <div class="toast__content"></div>
   </div>
   <script type="module" src="./scripts/index.js"></script>
 </body>
-
 </html>

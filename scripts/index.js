@@ -12,4 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initBurgerConstructor();
   initializePrices();
   initModal();
+
+  document.getElementById('go-to-constructor')?.addEventListener('click', () => {
+    initTabs('burger');
+
+    document.querySelector('.tabs-container')?.scrollIntoView({ behavior: 'smooth' });
+  });
 });

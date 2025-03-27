@@ -14,16 +14,22 @@ import { calculateAdditionalOffset } from '../../utils/helpers.js';
  */
 export function initBurgerConstructor() {
   const dynamicContainer = document.querySelector('.burger-constructor_dynamic');
+  const ketchupElement = document.querySelector('.burger-constructor__ketchup-image');
   const bunBottom = document.querySelector('.bun_bottom');
-  const containerHeight = 570;
-  const maxBurgerHeight = window.innerHeight - 100;
+
+  const isMiniTablet = window.innerWidth <= 1024;
+  const scaleFactor = isMiniTablet ? 0.7 : 1;
+  const containerHeight = isMiniTablet ? 420 : 570;
+  const maxBurgerHeight = isMiniTablet ? window.innerHeight - 50 :  window.innerHeight - 100;
   let currentHeight = containerHeight - bunBottom.offsetHeight;
 
-  let lastIngredientType = null; // Тип последнего добавленного ингредиента
+  let lastIngredientType = null;
   let isFirstIngredient = true;
 
   const addedIngredients = [];
   const ingredientCounts = {};
+
+  let isKetchupAdded = false;
 
   Object.keys(ingredientsData).forEach((ingredient) => {
     ingredientCounts[ingredient] = 0;
@@ -77,7 +83,32 @@ export function initBurgerConstructor() {
         updateBunTopPosition(currentHeight, addedIngredients);
       }
     }
+
+    if (target.id === 'ketchup-button') {
+      toggleKetchup(target);
+    }
   });
+
+  /**
+   * Переключает состояние кетчупа.
+   * @param {*} button  - Кнопка для переключения состояния
+   */
+  function toggleKetchup(button) {
+    if (isKetchupAdded) {
+      ketchupElement.classList.remove('fade-in')
+      ketchupElement.classList.add('fade-out');
+      setTimeout(() => { ketchupElement.classList.add('hidden'); }, 300)
+      button.textContent = '+ Tomato Ketchup 0.2 oz';
+
+    } else {
+      ketchupElement.classList.remove('fade-out', 'hidden');
+      ketchupElement.classList.add('fade-in')
+      button.textContent = '- Tomato Ketchup 0.2 oz';
+    }
+    ingredientCounts.ketchup = isKetchupAdded ? 0 : 1;
+    isKetchupAdded = !isKetchupAdded;
+    updateTotals(ingredientCounts, ingredientsData);
+  }
 
   /**
    * Добавляет ингредиент в конструктор бургера.
@@ -108,15 +139,15 @@ export function initBurgerConstructor() {
       ingredientWrapper.appendChild(ingredient);
     }
 
-    // Вычисляем дополнительный отступ на основе типа последнего ингредиента
+    const scaledHeight = ingredientsData[type].height * scaleFactor;
     const additionalOffset = calculateAdditionalOffset(lastIngredientType);
 
     // Корректировка для первого ингредиента
-    let firstIngredientOffset = isFirstIngredient ? -5 : 0;
+    let firstIngredientOffset = isFirstIngredient ? -5 * scaleFactor : 0;
     isFirstIngredient = false;
 
     // Обновляем текущую высоту
-    currentHeight -= ingredientsData[type].height + additionalOffset + firstIngredientOffset;
+    currentHeight -= scaledHeight + additionalOffset + firstIngredientOffset;
     ingredientWrapper.style.top = `${currentHeight}px`;
     ingredientWrapper.classList.add('fade-in');
     dynamicContainer.appendChild(ingredientWrapper);

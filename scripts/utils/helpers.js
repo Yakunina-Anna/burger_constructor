@@ -13,7 +13,7 @@ export function calculateAdditionalOffset(type) {
     offset += 5;
   }
   if (['tomato', 'onion', 'cucumber'].includes(type)) {
-    offset -= 7;
+    offset -= 10;
   }
 
   return offset;

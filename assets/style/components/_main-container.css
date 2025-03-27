@@ -1,0 +1,45 @@
+.container__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  max-width: 1560px;
+  padding: 5px 10px;
+  margin: 0 auto;
+}
+
+.main__inner {
+  width: 100%;
+}
+
+.main__image {
+  max-width: 940px;
+}
+
+.main__image img {
+  max-width: 100%;
+}
+
+.main__preview {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main__title {
+  max-width: 245px;
+}
+
+.main__button {
+  position: absolute;
+  top: 57%;
+  left: 30%;
+  text-transform: uppercase;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

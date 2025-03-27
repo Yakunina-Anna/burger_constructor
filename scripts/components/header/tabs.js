@@ -1,7 +1,8 @@
 /**
  * Инициализирует переключение вкладок (табов) в интерфейсе.
+ * @param {string} [forcedTab] - Принудительное открытие указанной вкладки
  */
-export function initTabs() {
+export function initTabs(forcedTab) {
   const headerLinks = document.querySelectorAll('.header__item');
   const tabContents = document.querySelectorAll('.tab-content');
 
@@ -16,7 +17,10 @@ export function initTabs() {
     tabContents.forEach((tab) => {
       tab.classList.remove('block');
     });
-    document.getElementById(tabId).classList.add('block');
+    const tabToShow = document.getElementById(tabId);
+    if (tabToShow) {
+      tabToShow.classList.add('block');
+    }
   }
 
   headerLinks.forEach((link) => {
@@ -24,10 +28,21 @@ export function initTabs() {
       event.preventDefault();
       const targetTab = link.dataset.tab;
       setActiveLink(link);
+      console.log(targetTab);
       showTab(`${targetTab}-tab`);
     });
   });
 
-  const defaultTab = document.querySelector('.header__item.active_link').dataset.tab;
-  showTab(`${defaultTab}-tab`);
+  if (forcedTab) {
+    const tabLink = document.querySelector(`.header__item[data-tab="${forcedTab}"]`);
+    if (tabLink) {
+      setActiveLink(tabLink);
+      showTab(`${forcedTab}-tab`);
+    }
+  } else {
+    const defaultTab = document.querySelector('.header__item.active_link')?.dataset.tab;
+    if (defaultTab) {
+      showTab(`${defaultTab}-tab`);
+    }
+  }
 }

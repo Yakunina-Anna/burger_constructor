@@ -1,3 +1,5 @@
+import  { showToast } from './toast.js';
+
 /**
  * Инициализирует модальное окно.
  *
@@ -11,42 +13,16 @@ export function initModal() {
   let scrollPosition = 0;
 
   /**
-   * Показывает всплывающее уведомление.
-   *
-   * @param {string} message - Текст уведомления.
-   * @param {'success' | 'error'} type - Тип уведомления (success/error).
-   */
-  function showToast(message, type = 'success') {
-    const toast = document.getElementById('toast');
-    if (!toast) {
-      console.error('Элемент toast не найден на странице.');
-      return;
-    }
-
-    // Устанавливаем текст и тип уведомления
-    toast.textContent = message;
-    toast.className = `toast toast--${type}`;
-    toast.style.display = 'block';
-
-    // Автоматически скрываем через 3 секунды
-    setTimeout(() => {
-      toast.style.display = 'none';
-    }, 3000);
-  }
-
-  /**
    * Обновляет доступные временные интервалы в селекте.
    */
   function updateDeliveryTimes() {
     const selectElement = document.getElementById('delivery-time');
-    const closingTime = 20; // Время закрытия в 24-часовом формате
+    const closingTime = 20;
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
 
-    // Очистка селекта перед добавлением новых опций
     selectElement.innerHTML = '';
 
-    // Добавляем плейсхолдер
     const placeholderOption = document.createElement('option');
     placeholderOption.value = '';
     placeholderOption.disabled = true;
@@ -69,12 +45,12 @@ export function initModal() {
    * Открывает модальное окно.
    */
   function openModal() {
-    scrollPosition = window.scrollY; // Сохраняем текущую позицию скролла
+    scrollPosition = window.scrollY;
 
-    document.body.classList.add('no-scroll'); // Добавляем класс для запрета скролла
-    document.body.style.top = `-${scrollPosition}px`; // Фиксируем положение страницы
+    document.body.classList.add('no-scroll');
+    document.body.style.top = `-${scrollPosition}px`;
 
-    modal.style.display = 'block'; // Показываем модальное окно
+    modal.style.display = 'block';
 
     const inputs = document.querySelectorAll('.custom-input');
     const selects = document.querySelectorAll('.custom-select');
@@ -102,11 +78,11 @@ export function initModal() {
    * Закрывает модальное окно.
    */
   function closeModalWindow() {
-    modal.style.display = 'none'; // Скрываем модальное окно
+    modal.style.display = 'none'; 
 
-    document.body.classList.remove('no-scroll'); // Убираем класс запрета скролла
-    document.body.style.top = ''; // Возвращаем нормальное положение страницы
-    window.scrollTo(0, scrollPosition); // Возвращаемся к сохраненной позиции скролла
+    document.body.classList.remove('no-scroll');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
   }
 
   // Обработчик клика по кнопке "Открыть форму"
@@ -142,11 +118,11 @@ export function initModal() {
     // Выводим данные в консоль (можно заменить на отправку на сервер)
     console.log('Имя:', name);
     console.log('Телефон:', number);
+    showToast('Заказ успешно отправлен!', 'success');
 
     // Закрываем модальное окно
     closeModalWindow();
 
     // Показываем уведомление об успешной отправке
-    showToast('Заказ успешно отправлен!', 'success');
   });
 }
