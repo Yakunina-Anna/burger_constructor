@@ -16,11 +16,9 @@
   gap: 0 80px;
 }
 
-/* Скрываем все вкладки по умолчанию */
-.tab-content {
+/* .tab-content {
   display: none;
-  /* width: 100%; */
-}
+} */
 
 .header__logo {
   width: 80px;
@@ -100,5 +98,21 @@
   }
   .header__list {
     gap: 0 40px
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header__inner-left {
+    gap: 0 15px
+  }
+
+  .header__list {
+    gap: 0 10px;
+    align-items: center;
   }
 }

@@ -170,7 +170,7 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .burger-constructor__controls{
+  .burger-constructor__controls {
     justify-content: center;
   }
 }
@@ -180,10 +180,13 @@
     flex-direction: column;
     padding: 48px 24px;
     height: max-content;
+    margin-bottom: 0;
   }
+
   .burger-constructor__title {
     max-width: 100%;
   }
+
   .burger-constructor__inner {
     height: 500px;
     width: 300px;

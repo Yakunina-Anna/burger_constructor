@@ -43,3 +43,17 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .main__preview {
+    flex-direction: column;
+  }
+
+  .main__title {
+    max-width: 100%;
+  }
+
+  .main__subtitle {
+    padding: 18px 0;
+  }
+}

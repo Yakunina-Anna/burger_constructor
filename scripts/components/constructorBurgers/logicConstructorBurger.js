@@ -2,6 +2,7 @@ import { ingredientsData } from '../../data/ingredientsData.js';
 import { updateTotals } from './totalsCalculatorBurger.js';
 import { updateBunTopPosition } from './uiComponentsBurger.js';
 import { calculateAdditionalOffset } from '../../utils/helpers.js';
+import { isTabletMini } from '../../utils/breakpoints.js';
 
 /**
  * Инициализирует конструктор бургера.
@@ -17,10 +18,9 @@ export function initBurgerConstructor() {
   const ketchupElement = document.querySelector('.burger-constructor__ketchup-image');
   const bunBottom = document.querySelector('.bun_bottom');
 
-  const isMiniTablet = window.innerWidth <= 1024;
-  const scaleFactor = isMiniTablet ? 0.7 : 1;
-  const containerHeight = isMiniTablet ? 420 : 570;
-  const maxBurgerHeight = isMiniTablet ? window.innerHeight - 50 :  window.innerHeight - 100;
+  const scaleFactor = isTabletMini() ? 0.7 : 1;
+  const containerHeight = isTabletMini() ? 420 : 570;
+  const maxBurgerHeight = isTabletMini() ? window.innerHeight - 50 :  window.innerHeight - 100;
   let currentHeight = containerHeight - bunBottom.offsetHeight;
 
   let lastIngredientType = null;

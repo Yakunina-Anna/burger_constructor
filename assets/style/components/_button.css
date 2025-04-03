@@ -107,3 +107,48 @@
   color: var(--muted-color);
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .button--circle {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+
+  .button svg {
+    margin-right: 4px;
+  }
+
+  .button--md {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .button--sm {
+    padding: 4px 6px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .button--xs {
+    padding: 3px 4px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .button--hero {
+    width: 120px;
+    height: 120px;
+    font-size: 18px;
+  }
+
+  .button--hero:hover {
+    transform: scale(1.05);
+  }
+}

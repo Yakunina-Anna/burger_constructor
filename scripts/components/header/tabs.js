@@ -1,3 +1,4 @@
+import { isMobile } from '../../utils/breakpoints.js';
 /**
  * Инициализирует переключение вкладок (табов) в интерфейсе.
  * @param {string} [forcedTab] - Принудительное открытие указанной вкладки
@@ -14,15 +15,24 @@ export function initTabs(forcedTab) {
   }
 
   function showTab(tabId) {
-    tabContents.forEach((tab) => {
-      tab.classList.remove('block');
-    });
-    const tabToShow = document.getElementById(tabId);
-    if (tabToShow) {
-      tabToShow.classList.add('block');
+    if (isMobile()) {
+      console.log(isMobile())
+      tabContents.forEach((tab) => {
+      tab.classList.remove('hidden');
+      });
+    }
+    else {
+      tabContents.forEach((tab) => {
+        tab.classList.add('hidden');
+      });
+      const tabToShow = document.getElementById(tabId);
+      if (tabToShow) {
+        tabToShow.classList.remove('hidden');
+      }
     }
   }
 
+  window.addEventListener('resize', () => {
   headerLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
@@ -45,4 +55,10 @@ export function initTabs(forcedTab) {
       showTab(`${defaultTab}-tab`);
     }
   }
+});
 }
+
+
+
+
+

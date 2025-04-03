@@ -1,6 +1,6 @@
 import { ingredientsData } from '../../data/ingredientsData.js';
 import { calculateAdditionalOffset } from '../../utils/helpers.js';
-
+import { isTabletMini } from '../../utils/breakpoints.js';
 /**
  * Инициализирует отображение цен для ингредиентов в конструкторе бургера.
  * Устанавливает цены в элементы `.burger-constructor__item-price span` на основе данных из `ingredientsData`.
@@ -27,13 +27,12 @@ export function updateBunTopPosition(currentHeight, addedIngredients) {
   const bunTop = document.querySelector('.bun_top');
 
   if (addedIngredients.length >= 3) {
-    const isMiniTablet = window.innerWidth <= 1024;
     bunTop.classList.remove('fade-out', 'hidden');
     bunTop.classList.add('fade-in');
     const lastIngredient = addedIngredients[addedIngredients.length - 1];
     const additionalOffset = calculateAdditionalOffset(lastIngredient.type);
 
-    const bunTopPosition = isMiniTablet ? currentHeight - additionalOffset - 125 : currentHeight - additionalOffset - 163;
+    const bunTopPosition = isTabletMini() ? currentHeight - additionalOffset - 125 : currentHeight - additionalOffset - 163;
     bunTop.style.top = `${bunTopPosition}px`;
   } else {
     bunTop.classList.remove('fade-in')
