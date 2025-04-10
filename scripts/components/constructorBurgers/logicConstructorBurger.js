@@ -1,8 +1,8 @@
-import { ingredientsData } from '../../data/ingredientsData.js';
+import { ingredientsData, deviceBurgerConfig } from '../../data/ingredientsData.js';
 import { updateTotals } from './totalsCalculatorBurger.js';
 import { updateBunTopPosition } from './uiComponentsBurger.js';
 import { calculateAdditionalOffset } from '../../utils/helpers.js';
-import { isTabletMini } from '../../utils/breakpoints.js';
+import { getDeviceType } from '../../utils/breakpoints.js';
 
 /**
  * Инициализирует конструктор бургера.
@@ -13,14 +13,14 @@ import { isTabletMini } from '../../utils/breakpoints.js';
  * - Отслеживает высоту бургера и выводит алерт, если она превышает допустимое значение.
  * - Обновляет итоговые значения (стоимость, калории и т.д.) при каждом изменении.
  */
+
 export function initBurgerConstructor() {
   const dynamicContainer = document.querySelector('.burger-constructor_dynamic');
   const ketchupElement = document.querySelector('.burger-constructor__ketchup-image');
   const bunBottom = document.querySelector('.bun_bottom');
+  let currentDeviceType = getDeviceType();
+  const { scaleFactor, containerHeight, maxBurgerHeight } = deviceBurgerConfig[currentDeviceType];
 
-  const scaleFactor = isTabletMini() ? 0.7 : 1;
-  const containerHeight = isTabletMini() ? 420 : 570;
-  const maxBurgerHeight = isTabletMini() ? window.innerHeight - 50 :  window.innerHeight - 100;
   let currentHeight = containerHeight - bunBottom.offsetHeight;
 
   let lastIngredientType = null;
