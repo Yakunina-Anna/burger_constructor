@@ -2,8 +2,7 @@ import { ingredientsData, deviceBurgerConfig } from '../../data/ingredientsData.
 import { updateTotals } from './totalsCalculatorBurger.js';
 import { updateBunTopPosition } from './uiComponentsBurger.js';
 import { calculateAdditionalOffset } from '../../utils/helpers.js';
-import { getDeviceType } from '../../utils/breakpoints.js';
-
+import { isMobile, isTabletMini } from '../../utils/breakpoints.js';
 /**
  * Инициализирует конструктор бургера.
  *
@@ -18,8 +17,9 @@ export function initBurgerConstructor() {
   const dynamicContainer = document.querySelector('.burger-constructor_dynamic');
   const ketchupElement = document.querySelector('.burger-constructor__ketchup-image');
   const bunBottom = document.querySelector('.bun_bottom');
-  let currentDeviceType = getDeviceType();
-  const { scaleFactor, containerHeight, maxBurgerHeight } = deviceBurgerConfig[currentDeviceType];
+  const scaleFactor = isTabletMini() ? 0.7 : isMobile() ? 0.5 : 1;
+  const containerHeight = isTabletMini() || isMobile() ? 420 : 570;
+  const maxBurgerHeight = isTabletMini() ? window.innerHeight - 50 : isMobile() ? window.innerHeight - 30 : window.innerHeight - 100;
 
   let currentHeight = containerHeight - bunBottom.offsetHeight;
 

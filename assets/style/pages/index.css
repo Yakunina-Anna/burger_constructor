@@ -50,13 +50,6 @@
   height: 100%;
 }
 
-.burger-constructor__inner {
-  position: relative;
-  width: 400px;
-  height: 100%;
-  margin: 0 auto;
-}
-
 .ingredient-wrapper {
   position: absolute;
   width: 100%;
@@ -194,16 +187,4 @@
   padding: 8px;
   border-radius: 50%;
   background-color: red;
-}
-
-.burger-constructor__ketchup {
-  color: var(--red-500-color);
-  cursor: pointer;
-}
-
-.burger-constructor__ketchup-image {
-  position: absolute;
-  bottom: 0;
-  right: -150px;
-  z-index: 99;
 }
