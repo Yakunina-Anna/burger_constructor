@@ -1,5 +1,5 @@
 import { isMobile } from '../../utils/breakpoints.js';
-
+import { closeHeaderModal } from '../../components/modals/modalHeaderMenu.js';
 /**
  * Инициализирует переключение вкладок (табов) в интерфейсе.
  * @param {string} [forcedTab] - Принудительное открытие указанной вкладки
@@ -65,6 +65,7 @@ export function initTabs(forcedTab) {
   // Обработчик клика по вкладке
   function handleTabClick(event) {
     event.preventDefault();
+    closeHeaderModal();
     const targetTab = event.currentTarget.dataset.tab;
     setActiveLink(event.currentTarget);
     showTab(`${targetTab}-tab`);

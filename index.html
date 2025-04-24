@@ -10,7 +10,7 @@
 
 <body>
   <div class="container">
-    <div class="container__main ">
+    <div class="container__main">
       <header class="header">
         <div class="header__inner-left">
           <div class="header__logo"></div>
@@ -25,20 +25,64 @@
             </ul>
           </nav>
         </div>
-        <div class="header__inner-right">
-          <button id="logout-button" class="button button--red">Выйти</button>
-          <button id="header-menu-button" class="button button--ghost">
-            <svg id="header-menu-button-open" width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+        <button id="callback-button" class="button button--red callback-button">
+          <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect id="device/phone-fill" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0" />
+            <g clip-path="url(#clip39_6197)">
+              <path id="Vector"
+                d="M14 10.94L14 13.3C14 13.47 13.93 13.63 13.82 13.75C13.7 13.88 13.54 13.95 13.37 13.96C13.08 13.98 12.85 14 12.66 14C6.77 14 2 9.22 2 3.33C2 3.14 2.01 2.91 2.03 2.62C2.04 2.45 2.11 2.29 2.24 2.17C2.36 2.06 2.52 1.99 2.69 2L5.05 2C5.13 1.99 5.21 2.03 5.27 2.08C5.33 2.14 5.37 2.21 5.38 2.3C5.4 2.45 5.41 2.57 5.42 2.66C5.56 3.59 5.83 4.49 6.23 5.33C6.29 5.46 6.25 5.62 6.13 5.71L4.69 6.74C5.57 8.79 7.2 10.42 9.25 11.3L10.28 9.86C10.32 9.8 10.38 9.76 10.45 9.74C10.52 9.73 10.6 9.73 10.66 9.76C11.51 10.16 12.41 10.44 13.33 10.57C13.42 10.58 13.54 10.6 13.7 10.61C13.78 10.62 13.85 10.66 13.91 10.72C13.97 10.78 14 10.86 14 10.94L14 10.94Z"
+                fill-opacity="1.000000" fill-rule="nonzero" />
+            </g>
+          </svg>
+          <span>Call Me Back</span>
+        </button>
+        <div id="header-right-desktop" class="header__inner-right">
+          <p class="font-16-semibold">8 800 437-87-22</p>
+          <button id="logout-button" class="button button--ghost button-header--circle">
+            <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path id="Vector"
+                d="M4 18L6 18L6 20L18 20L18 4L6 4L6 6L4 6L4 3C4 2.73 4.1 2.48 4.29 2.29C4.48 2.1 4.73 2 5 2L19 2C19.26 2 19.51 2.1 19.7 2.29C19.89 2.48 20 2.73 20 3L20 21C20 21.26 19.89 21.51 19.7 21.7C19.51 21.89 19.26 22 19 22L5 22C4.73 22 4.48 21.89 4.29 21.7C4.1 21.51 4 21.26 4 21L4 18ZM6 11L13 11L13 13L6 13L6 16L1 12L6 8L6 11Z"
+                fill-opacity="1.000000" fill-rule="nonzero" />
+            </svg>
+          </button>
+          <button id="header-menu-button" class="button button--ghost button-header--circle">
+            <svg style="pointer-events: none;" id="header-menu-button-open" width="16.000000" height="16.000000"
+              viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect id="system/menu-4-fill" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0" />
               <g clip-path="url(#clip38_4229)">
                 <path id="Vector"
                   d="M10.66 12L10.66 13.33L3.33 13.33L3.33 12L10.66 12ZM14 7.33L14 8.66L2 8.66L2 7.33L14 7.33ZM12.66 2.66L12.66 4L5.33 4L5.33 2.66L12.66 2.66Z"
-                  fill="#5243C2" fill-opacity="1.000000" fill-rule="nonzero" />
+                  fill-opacity="1.000000" fill-rule="nonzero" />
               </g>
             </svg>
-            <svg id="header-menu-button-close" class="hidden" width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg id="header-menu-button-close" class="hidden" width="16.000000" height="16.000000" viewBox="0 0 16 16"
+              fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <desc>
+                Created with Pixso.
+              </desc>
+              <defs />
+              <path id="Vector"
+                d="M8 7.05L11.3 3.75L12.24 4.69L8.94 8L12.24 11.3L11.3 12.24L8 8.94L4.7 12.24L3.75 11.3L7.05 8L3.75 4.69L4.7 3.75L8 7.05Z"
+                fill="#5243C2" fill-opacity="1.000000" fill-rule="nonzero" />
+            </svg>
+          </button>
+        </div>
+        <div id="header-right-mobile" class="header__inner-right">
+          <button id="header-menu-button" class="button button--ghost button-header--circle">
+            <svg id="header-menu-button-open" width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <rect id="system/menu-4-fill" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0" />
+              <g clip-path="url(#clip38_4229)">
+                <path id="Vector"
+                  d="M10.66 12L10.66 13.33L3.33 13.33L3.33 12L10.66 12ZM14 7.33L14 8.66L2 8.66L2 7.33L14 7.33ZM12.66 2.66L12.66 4L5.33 4L5.33 2.66L12.66 2.66Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </g>
+            </svg>
+            <svg id="header-menu-button-close" class="hidden" width="16.000000" height="16.000000" viewBox="0 0 16 16"
+              fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <desc>
                 Created with Pixso.
               </desc>
@@ -135,11 +179,11 @@
                 </div>
                 <p class="font-14-semibold">Beef</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="beef">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="beef">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="beef">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -151,11 +195,11 @@
                 </div>
                 <p class="font-14-semibold">Cheese</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="cheese">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="cheese">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="cheese">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -168,11 +212,11 @@
                 </div>
                 <p class="font-14-semibold">Salad</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="salad">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="salad">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="salad">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -185,11 +229,11 @@
                 </div>
                 <p class="font-14-semibold">Tomato</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="tomato">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="tomato">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="tomato">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -202,11 +246,11 @@
                 </div>
                 <p class="font-14-semibold">Onion</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="onion">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="onion">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="onion">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -219,11 +263,11 @@
                 </div>
                 <p class="font-14-semibold">Cucumber</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="cucumber">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="cucumber">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="cucumber">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -236,11 +280,11 @@
                 </div>
                 <p class="font-14-semibold">Bun Middle</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="bun_middle">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="bun_middle">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="bun_middle">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -252,11 +296,11 @@
                 </div>
                 <p class="font-14-semibold">Mayo</p>
                 <div class="burger-constructor__item-actions">
-                  <button class="button button--ghost button--xs button--circle button--add" data-action="add"
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
                     data-ingredient="mayo">+</button>
                   <span class="count">0</span>
-                  <button class="button button--ghost button--xs button--circle button--remove" data-action="remove"
-                    data-ingredient="mayo">-</button>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="mayo">-</button>
                 </div>
                 <div class="burger-constructor__item-price">
                   <span>$0.50</span>
@@ -352,6 +396,30 @@
   <div id="toast" class="toast">
     <div class="toast__content"></div>
   </div>
+  <div id="callback-modal" class="modal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <div class="modal__title">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 20C14.12 20 16.15 19.15 17.65 17.65C19.15 16.15 20 14.12 20 12C20 9.87 19.15 7.84 17.65 6.34C16.15 4.84 14.12 4 12 4C9.87 4 7.84 4.84 6.34 6.34C4.84 7.84 4 9.87 4 12C4 14.12 4.84 16.15 6.34 17.65C7.84 19.15 9.87 20 12 20ZM12 22C6.47 22 2 17.52 2 12C2 6.47 6.47 2 12 2C17.52 2 22 6.47 22 12C22 17.52 17.52 22 12 22ZM12 14C11.46 14 10.96 13.78 10.58 13.41C10.21 13.03 10 12.53 10 12C10 11.46 10.21 10.96 10.58 10.58C10.96 10.21 11.46 10 12 10C12.53 10 13.03 10.21 13.41 10.58C13.78 10.96 14 11.46 14 12C14 12.53 13.78 13.03 13.41 13.41C13.03 13.78 12.53 14 12 14Z"
+              fill="#1F2939" fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+          <h5>Checkout</h5>
+        </div>
+        <div id="callback-close" class="modal__close">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 10.58L16.95 5.63L18.36 7.05L13.41 12L18.36 16.95L16.95 18.36L12 13.41L7.04 18.36L5.63 16.95L10.58 12L5.63 7.05L7.04 5.63L12 10.58Z"
+              fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+        </div>
+      </div>
+      dsfdsd
+    </div>
+  </div>
   <div id="header-modal" class="header__modal">
     <div class="header__modal-content">
       <p class="font-16-semibold">8 800 437-87-22</p>
@@ -365,6 +433,14 @@
           </li>
         </ul>
       </nav>
+      <button id="logout-button" class="button button--ghost button-header--circle">
+        <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path id="Vector"
+            d="M4 18L6 18L6 20L18 20L18 4L6 4L6 6L4 6L4 3C4 2.73 4.1 2.48 4.29 2.29C4.48 2.1 4.73 2 5 2L19 2C19.26 2 19.51 2.1 19.7 2.29C19.89 2.48 20 2.73 20 3L20 21C20 21.26 19.89 21.51 19.7 21.7C19.51 21.89 19.26 22 19 22L5 22C4.73 22 4.48 21.89 4.29 21.7C4.1 21.51 4 21.26 4 21L4 18ZM6 11L13 11L13 13L6 13L6 16L1 12L6 8L6 11Z"
+            fill-opacity="1.000000" fill-rule="nonzero" />
+        </svg>
+      </button>
     </div>
   </div>
   <script type="module" src="./scripts/index.js"></script>

@@ -9,12 +9,22 @@
   border-radius: 99px;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease, fill 0.3s ease;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
 }
 
-.button--circle {
+.button-header--circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.button-action--circle {
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -78,21 +88,35 @@
   color: var(--primary-color);
 }
 
+.button--ghost svg{
+  fill: var(--primary-color);
+}
+
 .button--ghost:hover {
   background-color: var(--indigo-600-color);
-  background-color: var(--primary-color);
   color: var(--white-color);
 }
+
+.button--ghost:hover svg{
+  fill: var(--white-color);
+}
+
 
 .button--red {
   background-color: var(--red-200-color);
   color: var(--red-500-color);
+}
+
+.button--red  svg{
   fill:  var(--red-500-color);
 }
 
 .button--red:hover {
   background-color: var(--red-500-color);
   color: var(--white-color);
+}
+
+.button--red:hover svg {
   fill: var(--white-color);
 }
 
@@ -111,10 +135,9 @@
 @media (max-width: 768px) {
   .button {
     font-size: 14px;
-    padding: 8px 16px;
   }
 
-  .button--circle {
+  .button-action--circle {
     width: 24px;
     height: 24px;
     font-size: 16px;
@@ -150,5 +173,10 @@
 
   .button--hero:hover {
     transform: scale(1.05);
+  }
+
+  .button-header--circle {
+    width: 40px;
+    height: 40px;
   }
 }

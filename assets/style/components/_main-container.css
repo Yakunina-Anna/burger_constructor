@@ -45,6 +45,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .container__main {
+    position: relative;
+    gap: 15px 0;
+  }
   .main__preview {
     flex-direction: column;
   }

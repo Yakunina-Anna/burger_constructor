@@ -215,9 +215,25 @@
     grid-template-rows: auto;
   }
 
+  .burger-constructor__summary-price {
+    text-align: center;
+  }
+
   .burger-constructor__summary-info {
     background-color: transparent;
     padding: 2px;
+    justify-items: center;
+  }
+
+  .burger-constructor__ketchup-image {
+    width: 50%;
+    bottom: -20px;
+    right: -50px;
+    z-index: 99;
+  }
+
+  .burger-constructor__ketchup-image img {
+    width: 100%;
   }
 }
 

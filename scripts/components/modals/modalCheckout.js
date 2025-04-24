@@ -78,7 +78,7 @@ export function initModal() {
    * Закрывает модальное окно.
    */
   function closeModalWindow() {
-    modal.style.display = 'none'; 
+    modal.style.display = 'none';
 
     document.body.classList.remove('no-scroll');
     document.body.style.top = '';

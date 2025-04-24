@@ -1,36 +1,67 @@
-// modal.js
-// Функция для открытия модального окна
-const buttonSvgOpen = document.getElementById('header-menu-button-open')
-const buttonSvgClose = document.getElementById('header-menu-button-close')
+const buttonSvgOpen = document.getElementById('header-menu-button-open');
+const buttonSvgClose = document.getElementById('header-menu-button-close');
+const modal = document.getElementById('header-modal');
+const button = document.getElementById('header-menu-button');
+const header = document.querySelector('.header');
 
-// Функция для открытия модального окна
-export function openModal() {
-  const modal = document.getElementById('header-modal');
-  buttonSvgClose.classList.remove('hidden');
-  buttonSvgOpen.classList.add('hidden');
-  modal.style.display = 'block';
-  document.body.style.overflow = 'hidden'; // Отключаем скроллинг страницы
+function checkElements() {
+  if (!buttonSvgOpen || !buttonSvgClose || !modal || !button) {
+    console.error('Один из необходимых элементов не найден в DOM');
+    return false;
+  }
+  return true;
 }
 
-// Функция для закрытия модального окна
-export function closeModal() {
-  const modal = document.getElementById('header-modal');
-  buttonSvgClose.classList.add('hidden');
-  buttonSvgOpen.classList.remove('hidden');
-  modal.style.display = 'none';
-  document.body.style.overflow = ''; // Включаем скроллинг страницы
+export function openHeaderModal() {
+  try {
+    const body = document.body;
+
+    buttonSvgClose.style.display = 'block';
+    buttonSvgOpen.style.display = 'none';
+
+    modal.style.display = 'block';
+    body.style.overflow = 'hidden';
+
+    button.setAttribute('aria-expanded', 'true');
+  } catch (error) {
+    console.error('Error in openHeaderModal:', error);
+  }
 }
 
-// Функция для инициализации модального окна
+export function closeHeaderModal() {
+  try {
+    const body = document.body;
+
+    buttonSvgClose.style.display = 'none';
+    buttonSvgOpen.style.display = 'block';
+
+    modal.style.display = 'none';
+    body.style.overflow = '';
+
+    button.setAttribute('aria-expanded', 'false');
+  } catch (error) {
+    console.error('Error in closeHeaderModal:', error);
+  }
+}
+
+function handleDocumentClick(event) {
+  if (event.target.closest('#header-menu-button')) {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    isExpanded ? closeHeaderModal() : openHeaderModal();
+  } else if (event.target === modal) {
+    closeHeaderModal();
+  }
+}
+
 export function initMenuModal() {
-  const button = document.getElementById('header-menu-button');
-  const modal = document.getElementById('header-modal');
+  if (!checkElements()) return;
 
-  button.addEventListener('click', openModal);
+  button.setAttribute('aria-expanded', 'false');
+  document.addEventListener('click', handleDocumentClick);
 
-  window.addEventListener('click', (event) => {
-    if (event.target == modal) {
-      closeModal();
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+      closeHeaderModal();
     }
   });
 }

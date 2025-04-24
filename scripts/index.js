@@ -3,7 +3,7 @@ import { initBurgerConstructor } from './components/constructorBurgers/logicCons
 import { initializePrices } from './components/constructorBurgers/uiComponentsBurger.js';
 import { initModal } from './components/modals/modalCheckout.js';
 import { initMenuModal } from './components/modals/modalHeaderMenu.js';
-
+import { initCallBackModal } from './components/modals/modalCallBack.js';
 export * from './firebaseConfig.js';
 export * from './router.js';
 export * from './auth/signOut.js';
@@ -15,4 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initializePrices();
   initModal();
   initMenuModal()
+  initCallBackModal()
 });

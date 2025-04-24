@@ -143,18 +143,6 @@
   gap: 24px 0;
 }
 
-.burger-constructor__summary-line {
-  width: 100%;
-  height: 2px;
-  border: 2px solid var(--titan-white-color)
-}
-
-.burger-constructor__summary-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
 .burger-constructor__summary-price {
   color: var(--primary-color)
 }
