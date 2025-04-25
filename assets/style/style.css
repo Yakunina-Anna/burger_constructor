@@ -4,7 +4,7 @@
 @import "./base/_layout.css";
 @import "./base/_animations.css";
 
-/* @import "./pages/index.css"; */
+@import "./pages/auth.css";
 
 @import "./components/_button.css";
 @import "./components/_form.css";

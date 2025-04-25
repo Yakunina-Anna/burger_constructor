@@ -47,6 +47,14 @@
   gap: 0 60px;
 }
 
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 60px;
+  color: var(--gray-200-color)
+}
+
 .hidden,
 .hidden-checkbox {
   display: none !important;
@@ -60,13 +68,10 @@
   opacity: 1;
 }
 
-<<<<<<< HEAD
-=======
 .block {
   display: block;
 }
 
->>>>>>> constructor_page
 .disabled {
   pointer-events: none;
   opacity: 0.5;
@@ -85,10 +90,6 @@
   padding: 10px 20px;
 }
 
-<<<<<<< HEAD
-.footer {
-  
-=======
 .info-link {
   text-decoration: underline;
   color: var(--primary-color);
@@ -144,5 +145,4 @@
     justify-content: space-between;
     align-items: center;
   }
->>>>>>> constructor_page
 }

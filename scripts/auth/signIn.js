@@ -17,7 +17,7 @@ async function signIn(event, emailValue, passwordValue) {
   const signinButton = document.getElementById('signin-button');
   const signinButtonText = document.getElementById('signin-button-text');
   const signinLoader = document.getElementById('signin-loader');
-  const errorMessageElement = document.getElementById('error-message'); // Элемент для отображения сообщения об ошибке
+  const errorMessageElement = document.getElementById('error-message');
   errorMessageElement.classList.add('hidden');
   try {
     signinButton.classList.add('disabled');

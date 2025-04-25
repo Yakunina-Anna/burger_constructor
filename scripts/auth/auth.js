@@ -1,5 +1,8 @@
 export * from './signIn.js';
 export * from './signUp.js';
+export * from '../firebaseConfig.js';
+export * from '../router.js';
+export * from './signOut.js';
 
 const signinForm = document.getElementById('signin-form');
 const signupForm = document.getElementById('signup-form');
