@@ -1,0 +1,47 @@
+/* toast.css */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1000;
+  animation: slide-in 0.3s ease-out, fade-out 0.3s ease-in 3s forwards;
+}
+
+.toast--success {
+  background-color: #4caf50;
+  /* Зеленый цвет для успешных сообщений */
+  color: white;
+}
+
+.toast--error {
+  background-color: #f44336;
+  /* Красный цвет для ошибок */
+  color: white;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

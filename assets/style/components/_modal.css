@@ -1,0 +1,81 @@
+/* Стили для модального окна */
+.modal {
+  display: none; /* По умолчанию скрыто */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--primary-color-rgb), 0.8);
+  overflow: auto;
+}
+
+.modal__content {
+  background-color: var(--white-color);
+  margin: 10% auto;
+  padding: var(--size-padding-modal-chekout);
+  /* border: 1px solid #888; */
+  max-width: 600px;
+  height: max-content;
+  position: relative;
+  border-radius: 16px;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--size-padding-modal-chekout);
+  border-bottom: 1px solid var(--titan-white-color);
+}
+
+.modal__title {
+  display: flex;
+  align-items: center;
+  gap: 0 3px;
+}
+
+.modal__close {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .modal__close svg {
+  fill: #1F2939;
+ }
+
+.modal__close:hover svg {
+  fill: var(--primary-color)
+}
+
+.modal__checkout-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--size-padding-modal-chekout);
+  padding: var(--size-padding-modal-chekout) 0;
+}
+
+.modal__callBack-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: var(--size-padding-modal-chekout) 0;
+  gap: var(--size-padding-modal-chekout);
+}
+
+.modal__actions {
+  grid-column: span 2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0 var(--size-padding-modal-chekout);
+}
+
+/* Запрет скролла */
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

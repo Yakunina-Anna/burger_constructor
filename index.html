@@ -4,52 +4,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Make Your Burger</title>
   <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 
 <body>
   <div class="container">
-    <div class="container__main ">
+    <div class="container__main">
       <header class="header">
         <div class="header__inner-left">
           <div class="header__logo"></div>
           <nav>
             <ul class="header__list font-16">
-              <li class="header__item active_link">
-                <a href="./index.html" class="header__link">Discover</a>
+              <li class="header__item active_link" data-tab="discover">
+                <a href="#" class="header__link">Discover</a>
               </li>
-              <li class="header__item">
-                <a href="./about.html" class="header__link">Make Your Burger</a>
+              <li class="header__item" data-tab="burger">
+                <a href="#" class="header__link">Make Your Burger</a>
               </li>
             </ul>
           </nav>
         </div>
-        <div class="header__inner-right">
-          <button id="logout-button" class="button button--red">Выйти</button>
-          <button id="logout-button" class="button button--sm button--red">
-            <svg width="12.000610" height="12.000000" viewBox="0 0 12.0006 12" xmlns="http://www.w3.org/2000/svg"
+        <button id="callBack-button" class="button button--red callback-button">
+          <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect id="device/phone-fill" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0" />
+            <g clip-path="url(#clip39_6197)">
+              <path id="Vector"
+                d="M14 10.94L14 13.3C14 13.47 13.93 13.63 13.82 13.75C13.7 13.88 13.54 13.95 13.37 13.96C13.08 13.98 12.85 14 12.66 14C6.77 14 2 9.22 2 3.33C2 3.14 2.01 2.91 2.03 2.62C2.04 2.45 2.11 2.29 2.24 2.17C2.36 2.06 2.52 1.99 2.69 2L5.05 2C5.13 1.99 5.21 2.03 5.27 2.08C5.33 2.14 5.37 2.21 5.38 2.3C5.4 2.45 5.41 2.57 5.42 2.66C5.56 3.59 5.83 4.49 6.23 5.33C6.29 5.46 6.25 5.62 6.13 5.71L4.69 6.74C5.57 8.79 7.2 10.42 9.25 11.3L10.28 9.86C10.32 9.8 10.38 9.76 10.45 9.74C10.52 9.73 10.6 9.73 10.66 9.76C11.51 10.16 12.41 10.44 13.33 10.57C13.42 10.58 13.54 10.6 13.7 10.61C13.78 10.62 13.85 10.66 13.91 10.72C13.97 10.78 14 10.86 14 10.94L14 10.94Z"
+                fill-opacity="1.000000" fill-rule="nonzero" />
+            </g>
+          </svg>
+          <span>Call Me Back</span>
+        </button>
+        <div id="header-right-desktop" class="header__inner-right">
+          <p class="font-16-semibold">8 800 437-87-22</p>
+          <button id="logout-button" class="button button--ghost button-header--circle">
+            <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path id="Vector"
+                d="M4 18L6 18L6 20L18 20L18 4L6 4L6 6L4 6L4 3C4 2.73 4.1 2.48 4.29 2.29C4.48 2.1 4.73 2 5 2L19 2C19.26 2 19.51 2.1 19.7 2.29C19.89 2.48 20 2.73 20 3L20 21C20 21.26 19.89 21.51 19.7 21.7C19.51 21.89 19.26 22 19 22L5 22C4.73 22 4.48 21.89 4.29 21.7C4.1 21.51 4 21.26 4 21L4 18ZM6 11L13 11L13 13L6 13L6 16L1 12L6 8L6 11Z"
+                fill-opacity="1.000000" fill-rule="nonzero" />
+            </svg>
+          </button>
+          <button id="header-menu-button" class="button button--ghost button-header--circle">
+            <svg style="pointer-events: none;" id="header-menu-button-open" width="16.000000" height="16.000000"
+              viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <rect id="system/menu-4-fill" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0" />
+              <g clip-path="url(#clip38_4229)">
+                <path id="Vector"
+                  d="M10.66 12L10.66 13.33L3.33 13.33L3.33 12L10.66 12ZM14 7.33L14 8.66L2 8.66L2 7.33L14 7.33ZM12.66 2.66L12.66 4L5.33 4L5.33 2.66L12.66 2.66Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </g>
+            </svg>
+            <svg id="header-menu-button-close" class="hidden" width="16.000000" height="16.000000" viewBox="0 0 16 16"
+              fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <desc>
                 Created with Pixso.
               </desc>
               <defs />
               <path id="Vector"
-                d="M12 8.94L12 11.3C12 11.47 11.93 11.63 11.82 11.75C11.7 11.88 11.54 11.95 11.38 11.96C11.08 11.98 10.85 12 10.66 12C4.77 12 0 7.22 0 1.33C0 1.14 0.01 0.91 0.03 0.61C0.04 0.45 0.11 0.29 0.24 0.17C0.36 0.06 0.52 -0.01 0.69 0L3.05 0C3.13 -0.01 3.21 0.03 3.27 0.08C3.33 0.14 3.37 0.21 3.38 0.3C3.4 0.45 3.41 0.57 3.42 0.66C3.56 1.59 3.83 2.49 4.23 3.33C4.29 3.46 4.25 3.62 4.13 3.71L2.69 4.74C3.57 6.79 5.2 8.42 7.25 9.3L8.28 7.86C8.32 7.8 8.38 7.76 8.45 7.74C8.52 7.73 8.6 7.73 8.66 7.76C9.51 8.16 10.41 8.44 11.33 8.57C11.42 8.58 11.54 8.59 11.7 8.61C11.78 8.62 11.85 8.66 11.91 8.72C11.97 8.78 12 8.86 12 8.94L12 8.94Z"
-                fill-opacity="1.000000" fill-rule="nonzero" />
+                d="M8 7.05L11.3 3.75L12.24 4.69L8.94 8L12.24 11.3L11.3 12.24L8 8.94L4.7 12.24L3.75 11.3L7.05 8L3.75 4.69L4.7 3.75L8 7.05Z"
+                fill="#5243C2" fill-opacity="1.000000" fill-rule="nonzero" />
             </svg>
-            <span>Call Me Back</span>
           </button>
-          <a href="tel:+7000000000" class="header__info-link font-16-semibold">+7 000 000 00 00</a>
+        </div>
+        <div id="header-right-mobile" class="header__inner-right">
+          <button id="header-menu-button" class="button button--ghost button-header--circle">
+            <svg id="header-menu-button-open" width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <rect id="system/menu-4-fill" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0" />
+              <g clip-path="url(#clip38_4229)">
+                <path id="Vector"
+                  d="M10.66 12L10.66 13.33L3.33 13.33L3.33 12L10.66 12ZM14 7.33L14 8.66L2 8.66L2 7.33L14 7.33ZM12.66 2.66L12.66 4L5.33 4L5.33 2.66L12.66 2.66Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </g>
+            </svg>
+            <svg id="header-menu-button-close" class="hidden" width="16.000000" height="16.000000" viewBox="0 0 16 16"
+              fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <desc>
+                Created with Pixso.
+              </desc>
+              <defs />
+              <path id="Vector"
+                d="M8 7.05L11.3 3.75L12.24 4.69L8.94 8L12.24 11.3L11.3 12.24L8 8.94L4.7 12.24L3.75 11.3L7.05 8L3.75 4.69L4.7 3.75L8 7.05Z"
+                fill="#5243C2" fill-opacity="1.000000" fill-rule="nonzero" />
+            </svg>
+          </button>
         </div>
       </header>
       <main class="main">
-        <div class="main__inner">
-          <h1 class="main__title">Make Your Burger</h1>
-          <div class="main__image">
-            <img src="./assets/images/main-img.png" alt="main-image">
+        <div class="main__inner" id="main-content">
+          <div class="tab-content" id="discover-tab">
+            <div class="main__preview">
+              <h1 class="main__title">Make Your Burger</h1>
+              <p id="main-subtitle" class="font-20 main__subtitle">Parallax screen. Burger ingredients and emojis moving
+                depending on the position of the mouse pointer.</p>
+              <div class="main__image">
+                <img src="./assets/images/main-img.png" alt="main-image">
+              </div>
+              <button id="go-to-constructor" class="button button--hero button--primary main__button">make
+                burger</button>
+            </div>
           </div>
-          <button id="show-constructor" class="button button--hero button--primary main__button">make burger</button>
+          <div class="tab-content" id="burger-tab">
+            <div class="burger-constructor">
+              <h1 class="burger-constructor__title">Make Your Burger</h1>
+              <div class="burger-constructor__content">
+                <div class="burger-constructor__inner">
+                  <div class="burger-constructor__ketchup-image hidden">
+                    <img src="./assets/images/ketchup.png" alt="Ketchup">
+                  </div>
+                  <img src="./assets/images/bun_top.png" alt="Top Bun" class="ingredient bun_top hidden">
+                  <img src="./assets/images/bun.png" alt="Bun Bottom" class="ingredient bun_bottom">
+                  <div class="burger-constructor_dynamic"></div>
+                </div>
+              </div>
+              <div class="burger-constructor__summary">
+                <h3 class="burger-constructor__summary-title">Summary</h3>
+                <div class="burger-constructor__summary-line"></div>
+                <div class="burger-constructor__summary-content">
+                  <p id="total-cost" class="font-36 burger-constructor__summary-price">$0.00</p>
+                  <button id="checkout-button" class="button button--primary button--md">Checkout</button>
+                  <p class="font-14 burger-constructor__summary-descr">Build a <span class="font-14-semibold"
+                      style="color:var(--red-500-color)">$10</span> Burger and Get a Gift</p>
+                </div>
+                <div class="burger-constructor__summary-info">
+                  <div class="burger-constructor__summary-info-item">
+                    <div class="burger-constructor__summary-info-icon" style="background-color: #B956F5;">
+                      <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Vector"
+                          d="M8 0C3.58 0 0 3.58 0 8C0 12.41 3.58 16 8 16C12.41 16 16 12.41 16 8C16 3.58 12.41 0 8 0ZM11.8 12.13C11.67 12.26 11.5 12.33 11.33 12.33C11.16 12.33 10.99 12.26 10.86 12.13L7.52 8.8C7.4 8.68 7.33 8.51 7.33 8.33L7.33 4C7.33 3.63 7.63 3.33 8 3.33C8.36 3.33 8.66 3.63 8.66 4L8.66 8.05L11.8 11.19C12.06 11.45 12.06 11.87 11.8 12.13Z"
+                          fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                      </svg>
+                    </div>
+                    <p id="total-time" class="font-14-semibold">0 min</p>
+                  </div>
+                  <div class="burger-constructor__summary-info-item">
+                    <div class="burger-constructor__summary-info-icon" style="background-color: #F58F56;">
+                      <svg width="16.000000" height="14.334229" viewBox="0 0 16 14.3342" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Vector"
+                          d="M15.44 0.69C15.03 0.21 14.48 -0.06 13.87 0.01L2.07 0.01C0.84 0.01 -0.18 1.16 0.02 2.39L1.66 12.62C1.79 13.65 2.68 14.33 3.7 14.33L12.3 14.33C13.32 14.33 14.21 13.58 14.35 12.62L15.98 2.39C16.05 1.78 15.85 1.16 15.44 0.69ZM9.43 8.87C9.23 8.67 9.02 8.53 8.75 8.46L9.3 5.73L7.93 5.46L7.32 8.4C7.05 8.46 6.77 8.67 6.5 8.87L3.09 5.53C5.75 2.87 10.05 2.87 12.71 5.53L9.43 8.87Z"
+                          fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                      </svg>
+                    </div>
+                    <p id="total-weight" class="font-14-semibold">0 oz</p>
+                  </div>
+                  <div class="burger-constructor__summary-info-item">
+                    <div class="burger-constructor__summary-info-icon" style="background-color: var(--red-500-color);">
+                      <svg width="14.000000" height="20.000000" viewBox="0 0 14 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Vector"
+                          d="M8.75 0C4.77 2.45 5.25 9.37 5.25 9.37C5.25 9.37 3.5 8.75 3.5 5.93C1.41 7.23 0 9.72 0 12.5C0 16.64 3.13 20 7 20C10.86 20 14 16.64 14 12.5C14 6.4 8.75 5.15 8.75 0ZM7.61 17.41C6.2 17.79 4.78 16.87 4.43 15.36C4.08 13.86 4.93 12.33 6.34 11.95C9.74 11.05 10.16 9 10.16 9C10.16 9 11.85 16.28 7.61 17.41Z"
+                          fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                      </svg>
+
+                    </div>
+                    <p id="total-calories" class="font-14-semibold">0 kcal</p>
+                  </div>
+                </div>
+                <div class="burger-constructor__controls burger-constructor__left">
+                  <p id="ketchup-button" class="burger-constructor__ketchup font-20-semibold">+ Tomato Ketchup 0.2 oz
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="burger-constructor__controls">
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/beef.png" alt="Beef">
+                </div>
+                <p class="font-14-semibold">Beef</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="beef">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="beef">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/cheese.png" alt="Cheese">
+                </div>
+                <p class="font-14-semibold">Cheese</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="cheese">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="cheese">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/salad.png" alt="Salad">
+                </div>
+                <p class="font-14-semibold">Salad</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="salad">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="salad">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/tomato.png" alt="Tomato">
+                </div>
+                <p class="font-14-semibold">Tomato</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="tomato">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="tomato">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/onion.png" alt="Onion">
+                </div>
+                <p class="font-14-semibold">Onion</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="onion">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="onion">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/cucumber.png" alt="Cucumber">
+                </div>
+                <p class="font-14-semibold">Cucumber</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="cucumber">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="cucumber">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/bun_middle.png" alt="Middle Bun">
+                </div>
+                <p class="font-14-semibold">Bun Middle</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="bun_middle">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="bun_middle">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+              <div class="burger-constructor__item">
+                <div class="burger-constructor__item-image">
+                  <img src="./assets/images/mayo.png" alt="Mayo">
+                </div>
+                <p class="font-14-semibold">Mayo</p>
+                <div class="burger-constructor__item-actions">
+                  <button class="button button--ghost button--xs button-action--circle button--add" data-action="add"
+                    data-ingredient="mayo">+</button>
+                  <span class="count">0</span>
+                  <button class="button button--ghost button--xs button-action--circle button--remove"
+                    data-action="remove" data-ingredient="mayo">-</button>
+                </div>
+                <div class="burger-constructor__item-price">
+                  <span>$0.50</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <footer class="footer">
@@ -58,10 +316,152 @@
         </div>
       </footer>
     </div>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <div class="modal__title">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 20C14.12 20 16.15 19.15 17.65 17.65C19.15 16.15 20 14.12 20 12C20 9.87 19.15 7.84 17.65 6.34C16.15 4.84 14.12 4 12 4C9.87 4 7.84 4.84 6.34 6.34C4.84 7.84 4 9.87 4 12C4 14.12 4.84 16.15 6.34 17.65C7.84 19.15 9.87 20 12 20ZM12 22C6.47 22 2 17.52 2 12C2 6.47 6.47 2 12 2C17.52 2 22 6.47 22 12C22 17.52 17.52 22 12 22ZM12 14C11.46 14 10.96 13.78 10.58 13.41C10.21 13.03 10 12.53 10 12C10 11.46 10.21 10.96 10.58 10.58C10.96 10.21 11.46 10 12 10C12.53 10 13.03 10.21 13.41 10.58C13.78 10.96 14 11.46 14 12C14 12.53 13.78 13.03 13.41 13.41C13.03 13.78 12.53 14 12 14Z"
+              fill="#1F2939" fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+          <h5>Checkout</h5>
+        </div>
+        <div class="modal__close">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 10.58L16.95 5.63L18.36 7.05L13.41 12L18.36 16.95L16.95 18.36L12 13.41L7.04 18.36L5.63 16.95L10.58 12L5.63 7.05L7.04 5.63L12 10.58Z"
+              fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+        </div>
+      </div>
+      <form id="checkout-form" class="modal__checkout-form">
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 18.33C5.39 18.33 1.66 14.6 1.66 10C1.66 5.39 5.39 1.66 10 1.66C14.6 1.66 18.33 5.39 18.33 10C18.33 14.6 14.6 18.33 10 18.33ZM10 16.66C11.76 16.66 13.46 15.96 14.71 14.71C15.96 13.46 16.66 11.76 16.66 10C16.66 8.23 15.96 6.53 14.71 5.28C13.46 4.03 11.76 3.33 10 3.33C8.23 3.33 6.53 4.03 5.28 5.28C4.03 6.53 3.33 8.23 3.33 10C3.33 11.76 4.03 13.46 5.28 14.71C6.53 15.96 8.23 16.66 10 16.66ZM5.83 10.83L7.5 10.83C7.5 11.49 7.76 12.13 8.23 12.6C8.7 13.07 9.33 13.33 10 13.33C10.66 13.33 11.29 13.07 11.76 12.6C12.23 12.13 12.5 11.49 12.5 10.83L14.16 10.83C14.16 11.93 13.72 12.99 12.94 13.77C12.16 14.56 11.1 15 10 15C8.89 15 7.83 14.56 7.05 13.77C6.27 12.99 5.83 11.93 5.83 10.83ZM6.66 9.16C6.33 9.16 6.01 9.03 5.78 8.8C5.54 8.56 5.41 8.24 5.41 7.91C5.41 7.58 5.54 7.26 5.78 7.03C6.01 6.79 6.33 6.66 6.66 6.66C6.99 6.66 7.31 6.79 7.55 7.03C7.78 7.26 7.91 7.58 7.91 7.91C7.91 8.24 7.78 8.56 7.55 8.8C7.31 9.03 6.99 9.16 6.66 9.16ZM13.33 9.16C13 9.16 12.68 9.03 12.44 8.8C12.21 8.56 12.08 8.24 12.08 7.91C12.08 7.58 12.21 7.26 12.44 7.03C12.68 6.79 13 6.66 13.33 6.66C13.66 6.66 13.98 6.79 14.21 7.03C14.45 7.26 14.58 7.58 14.58 7.91C14.58 8.24 14.45 8.56 14.21 8.8C13.98 9.03 13.66 9.16 13.33 9.16Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="text" id="name" name="name" class="custom-input input-with-icon" required />
+            <label for="name" class="floating-label">Your Name</label>
+          </div>
+        </div>
 
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.5 13.68L17.5 16.62C17.5 16.84 17.42 17.04 17.27 17.19C17.13 17.35 16.93 17.44 16.72 17.46C16.36 17.48 16.06 17.5 15.83 17.5C8.46 17.5 2.5 11.53 2.5 4.16C2.5 3.93 2.51 3.63 2.53 3.27C2.55 3.06 2.64 2.86 2.8 2.72C2.95 2.57 3.15 2.5 3.37 2.5L6.31 2.5C6.42 2.5 6.51 2.53 6.59 2.6C6.67 2.67 6.72 2.77 6.73 2.87C6.75 3.06 6.76 3.21 6.78 3.33C6.95 4.49 7.28 5.61 7.79 6.66C7.87 6.83 7.81 7.03 7.66 7.14L5.87 8.42C6.97 10.98 9.01 13.03 11.57 14.12L12.85 12.33C12.91 12.26 12.98 12.2 13.07 12.18C13.16 12.16 13.25 12.17 13.33 12.21C14.38 12.71 15.51 13.05 16.66 13.21C16.78 13.23 16.93 13.25 17.12 13.26C17.22 13.27 17.32 13.32 17.39 13.4C17.46 13.48 17.5 13.58 17.5 13.68L17.5 13.68Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="tel" id="phone" name="phone" class="custom-input input-with-icon" required />
+            <label for="phone" class="floating-label">Phone Number</label>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.33 12.5L3.33 7.08C3.33 6.08 3.72 5.13 4.43 4.43C5.13 3.72 6.08 3.33 7.08 3.33C8.07 3.33 9.03 3.72 9.73 4.43C10.43 5.13 10.83 6.08 10.83 7.08L10.83 12.91C10.83 13.46 11.05 13.99 11.44 14.38C11.83 14.78 12.36 15 12.91 15C13.46 15 13.99 14.78 14.38 14.38C14.78 13.99 15 13.46 15 12.91L15 7.35C14.44 7.16 13.97 6.77 13.67 6.26C13.37 5.75 13.26 5.15 13.36 4.57C13.46 3.99 13.77 3.46 14.22 3.08C14.67 2.7 15.24 2.49 15.83 2.49C16.42 2.49 16.99 2.7 17.44 3.08C17.89 3.46 18.19 3.99 18.29 4.57C18.39 5.15 18.28 5.75 17.99 6.26C17.69 6.77 17.22 7.16 16.66 7.35L16.66 12.91C16.66 13.91 16.27 14.86 15.56 15.56C14.86 16.27 13.91 16.66 12.91 16.66C11.92 16.66 10.96 16.27 10.26 15.56C9.56 14.86 9.16 13.91 9.16 12.91L9.16 7.08C9.16 6.53 8.94 6 8.55 5.61C8.16 5.21 7.63 5 7.08 5C6.53 5 6 5.21 5.61 5.61C5.21 6 5 6.53 5 7.08L5 12.5L7.5 12.5L4.16 16.66L0.83 12.5L3.33 12.5ZM15.83 5.83C16.05 5.83 16.26 5.74 16.42 5.58C16.57 5.43 16.66 5.22 16.66 5C16.66 4.77 16.57 4.56 16.42 4.41C16.26 4.25 16.05 4.16 15.83 4.16C15.61 4.16 15.4 4.25 15.24 4.41C15.08 4.56 15 4.77 15 5C15 5.22 15.08 5.43 15.24 5.58C15.4 5.74 15.61 5.83 15.83 5.83Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="text" id="address" name="address" class="custom-input input-with-icon" required />
+            <label for="address" class="floating-label">Address</label>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <select id="delivery-time" name="delivery-time" class="custom-select">
+          </select>
+          <label for="delivery-time" class="floating-label">Delivery Time</label>
+        </div>
+        <div class="modal__actions">
+          <button class="button button--ghost button--md modal__close" type="reset">Cancel</button>
+          <button class="button button--primary button--md" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="toast" class="toast">
+    <div class="toast__content"></div>
+  </div>
+  <div id="callBack-modal" class="modal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <div class="modal__title">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 20C14.12 20 16.15 19.15 17.65 17.65C19.15 16.15 20 14.12 20 12C20 9.87 19.15 7.84 17.65 6.34C16.15 4.84 14.12 4 12 4C9.87 4 7.84 4.84 6.34 6.34C4.84 7.84 4 9.87 4 12C4 14.12 4.84 16.15 6.34 17.65C7.84 19.15 9.87 20 12 20ZM12 22C6.47 22 2 17.52 2 12C2 6.47 6.47 2 12 2C17.52 2 22 6.47 22 12C22 17.52 17.52 22 12 22ZM12 14C11.46 14 10.96 13.78 10.58 13.41C10.21 13.03 10 12.53 10 12C10 11.46 10.21 10.96 10.58 10.58C10.96 10.21 11.46 10 12 10C12.53 10 13.03 10.21 13.41 10.58C13.78 10.96 14 11.46 14 12C14 12.53 13.78 13.03 13.41 13.41C13.03 13.78 12.53 14 12 14Z"
+              fill="#1F2939" fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+          <h5>Call me back</h5>
+        </div>
+        <div class="modal__close">
+          <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="Vector"
+              d="M12 10.58L16.95 5.63L18.36 7.05L13.41 12L18.36 16.95L16.95 18.36L12 13.41L7.04 18.36L5.63 16.95L10.58 12L5.63 7.05L7.04 5.63L12 10.58Z"
+              fill-opacity="1.000000" fill-rule="nonzero" />
+          </svg>
+        </div>
+      </div>
+      <form id="callBack-form" class="modal__callBack-form">
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.5 13.68L17.5 16.62C17.5 16.84 17.42 17.04 17.27 17.19C17.13 17.35 16.93 17.44 16.72 17.46C16.36 17.48 16.06 17.5 15.83 17.5C8.46 17.5 2.5 11.53 2.5 4.16C2.5 3.93 2.51 3.63 2.53 3.27C2.55 3.06 2.64 2.86 2.8 2.72C2.95 2.57 3.15 2.5 3.37 2.5L6.31 2.5C6.42 2.5 6.51 2.53 6.59 2.6C6.67 2.67 6.72 2.77 6.73 2.87C6.75 3.06 6.76 3.21 6.78 3.33C6.95 4.49 7.28 5.61 7.79 6.66C7.87 6.83 7.81 7.03 7.66 7.14L5.87 8.42C6.97 10.98 9.01 13.03 11.57 14.12L12.85 12.33C12.91 12.26 12.98 12.2 13.07 12.18C13.16 12.16 13.25 12.17 13.33 12.21C14.38 12.71 15.51 13.05 16.66 13.21C16.78 13.23 16.93 13.25 17.12 13.26C17.22 13.27 17.32 13.32 17.39 13.4C17.46 13.48 17.5 13.58 17.5 13.68L17.5 13.68Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="tel" id="callBack-phone" name="phone" class="custom-input input-with-icon" required />
+            <label for="phone" class="floating-label">Phone Number</label>
+          </div>
+        </div>
+        <div class="modal__actions">
+          <button class="button button--ghost button--md modal__close" type="reset">Cancel</button>
+          <button class="button button--primary button--md" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="header-modal" class="header__modal">
+    <div class="header__modal-content">
+      <p class="font-16-semibold">8 800 437-87-22</p>
+      <nav>
+        <ul class="header__list font-16">
+          <li class="header__item active_link" data-tab="discover">
+            <a href="#" class="header__link">Discover</a>
+          </li>
+          <li class="header__item" data-tab="burger">
+            <a href="#" class="header__link">Make Your Burger</a>
+          </li>
+        </ul>
+      </nav>
+      <button id="logout-button" class="button button--ghost button-header--circle">
+        <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path id="Vector"
+            d="M4 18L6 18L6 20L18 20L18 4L6 4L6 6L4 6L4 3C4 2.73 4.1 2.48 4.29 2.29C4.48 2.1 4.73 2 5 2L19 2C19.26 2 19.51 2.1 19.7 2.29C19.89 2.48 20 2.73 20 3L20 21C20 21.26 19.89 21.51 19.7 21.7C19.51 21.89 19.26 22 19 22L5 22C4.73 22 4.48 21.89 4.29 21.7C4.1 21.51 4 21.26 4 21L4 18ZM6 11L13 11L13 13L6 13L6 16L1 12L6 8L6 11Z"
+            fill-opacity="1.000000" fill-rule="nonzero" />
+        </svg>
+      </button>
+    </div>
   </div>
   <script type="module" src="./scripts/index.js"></script>
-  <!-- <script type="module" src="./scripts/auth/auth.js"></script> -->
 </body>
 
 </html>

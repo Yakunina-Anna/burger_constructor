@@ -1,20 +1,38 @@
-/* _button.css */
-
-/* Базовые стили кнопки */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: inherit; /* Наследуем шрифт */
-  font-size: 1rem; /* Размер по умолчанию */
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: 500;
   border: none;
-  border-radius: 99px; /* Скругление углов */
+  border-radius: 99px;
   cursor: pointer;
-  text-decoration: none; /* Убираем подчеркивание для ссылок */
-  transition: all 0.3s ease, color 0.3s ease;
-  padding: 0.75rem 1.5rem; /* Отступы по умолчанию */
+  text-decoration: none;
+  transition: all 0.3s ease, fill 0.3s ease;
+  padding: 0.75rem 1.5rem;
   font-weight: 600;
+}
+
+.button-header--circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.button-action--circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.2rem;
 }
 
 .button svg {
@@ -34,68 +52,131 @@
 }
 
 .button--xs {
-  padding: 4px 6px;
+  padding: 6px 6px;
   font-size: 14px;
   line-height: 20px;
 }
 
 .button--hero {
-  border-radius: 50%; /* Делаем кнопку круглой */
-  width: 180px; /* Фиксированная ширина */
-  height: 180px; /* Фиксированная высота */
-  padding: 0; /* Убираем отступы */
-  font-size: 24px; /* Размер текста внутри кнопки */
-  display: flex; /* Используем flexbox для центрирования */
-  align-items: center; /* Вертикальное центрирование */
-  justify-content: center; /* Горизонтальное центрирование */
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  padding: 0;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease;
 }
 
 .button--hero:hover {
-  transform: scale(1.1); /* Увеличиваем размер на 10% */
+  transform: scale(1.1);
 }
 
 .button--primary {
-  background-color: var(--primary-color); /* Цвет фона */
-  color: var(--white-color); /* Цвет текста */
+  background-color: var(--primary-color);
+  color: var(--white-color);
   fill: var(--white-color);
 }
 
 .button--primary:hover {
-  background-color: var(--indigo-600-color); /* Цвет фона */
+  background-color: var(--indigo-600-color);
 }
 
-.button--primary:disabled, .button--ghost:disabled {
+.button--ghost {
+  background-color: var(--titan-white-color);
+  color: var(--primary-color);
+}
+
+.button--ghost svg{
+  fill: var(--primary-color);
+}
+
+.button--ghost:hover {
+  background-color: var(--indigo-600-color);
+  color: var(--white-color);
+}
+
+.button--ghost:hover svg{
+  fill: var(--white-color);
+}
+
+
+.button--red {
+  background-color: var(--red-200-color);
+  color: var(--red-500-color);
+}
+
+.button--red  svg{
+  fill:  var(--red-500-color);
+}
+
+.button--red:hover {
+  background-color: var(--red-500-color);
+  color: var(--white-color);
+}
+
+.button--red:hover svg {
+  fill: var(--white-color);
+}
+
+.button--red[disabled] {
+  background-color: var(--red-200-color);
+  color: var(--red-300-color);
+  cursor: not-allowed;
+}
+
+.button--primary[disabled], .button--ghost[disabled] {
   background-color: var(--titan-white-color);
   color: var(--muted-color);
   cursor: not-allowed;
 }
 
-.button--ghost {
-  background-color: var(--titan-white-color); /* Цвет фона */
-  color: var(--primary-color); /* Цвет текста */
-}
+@media (max-width: 768px) {
+  .button {
+    font-size: 14px;
+  }
 
-.button--ghost:hover {
-  background-color: var(--indigo-600-color); /* Цвет фона */
-  background-color: var(--primary-color); /* Цвет фона */
-  color: var(--white-color); /* Цвет текста */
-}
+  .button-action--circle {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
 
-.button--red {
-  background-color: var(--red-200-color); /* Цвет фона */
-  color: var(--red-500-color); /* Цвет текста */
-  fill:  var(--red-500-color);
-}
+  .button svg {
+    margin-right: 4px;
+  }
 
-.button--red:hover {
-  background-color: var(--red-500-color); /* Цвет фона */
-  color: var(--white-color); /* Цвет текста */
-  fill: var(--white-color);
-}
+  .button--md {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 18px;
+  }
 
-.button--red:disabled {
-  background-color: var(--red-200-color);
-  color: var(--red-300-color);
-  cursor: not-allowed;
+  .button--sm {
+    padding: 4px 6px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .button--xs {
+    padding: 3px 4px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .button--hero {
+    width: 120px;
+    height: 120px;
+    font-size: 18px;
+  }
+
+  .button--hero:hover {
+    transform: scale(1.05);
+  }
+
+  .button-header--circle {
+    width: 40px;
+    height: 40px;
+  }
 }

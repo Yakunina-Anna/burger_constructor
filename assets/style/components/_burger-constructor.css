@@ -1,0 +1,244 @@
+.burger-constructor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 650px;
+  padding: 0 10px;
+  margin-bottom: 87px;
+}
+
+.burger-constructor__title {
+  max-width: 245px;
+}
+
+.burger-constructor__content {
+  background: url("../../images/bg-constructor.png") no-repeat center;
+  background-size: contain;
+  width: 604px;
+  height: 100%;
+}
+
+.burger-constructor__inner {
+  position: relative;
+  width: 400px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.burger-constructor__controls {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.burger-constructor__controls.burger-constructor__left {
+  justify-content: start;
+}
+
+.burger-constructor__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 18px;
+  max-width: 140px;
+  border: 1px solid var(--titan-white-color);
+  border-radius: 32px;
+  gap: 12px 0;
+}
+
+.burger-constructor__item-image {
+  width: 100%;
+}
+
+.burger-constructor__item-image img {
+  width: 100%;
+}
+
+.burger-constructor__item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.burger-constructor__summary {
+  display: flex;
+  flex-direction: column;
+  width: 405px;
+  gap: 24px 0;
+}
+
+.burger-constructor__summary-line {
+  width: 100%;
+  height: 2px;
+  border: 2px solid var(--titan-white-color);
+}
+
+.burger-constructor__summary-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.burger-constructor__summary-price {
+  color: var(--primary-color);
+}
+
+.burger-constructor__summary-info {
+  background-color: var(--titan-white-color);
+  border-radius: 32px;
+  padding: 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.burger-constructor__summary-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.burger-constructor__summary-info-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.ingredient-wrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredient {
+  position: absolute;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.ingredient--small {
+  width: 50%;
+  height: auto;
+  top: 0;
+}
+
+.ingredient--small:nth-child(1) {
+  right: 0;
+}
+
+.bun_bottom {
+  bottom: 0;
+  z-index: 1;
+}
+
+.bun_top {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+
+.burger-constructor_dynamic {
+  position: relative;
+  z-index: 2;
+}
+
+.burger-constructor__ketchup {
+  color: var(--red-500-color);
+  cursor: pointer;
+}
+
+.burger-constructor__ketchup-image {
+  position: absolute;
+  bottom: 0;
+  right: -150px;
+  z-index: 99;
+}
+
+@media screen and (max-width: 1280px) {
+  .burger-constructor__controls {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .burger-constructor {
+    flex-direction: column;
+    padding: 48px 24px;
+    height: max-content;
+    margin-bottom: 0;
+  }
+
+  .burger-constructor__title {
+    max-width: 100%;
+  }
+
+  .burger-constructor__inner {
+    height: 500px;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .burger-constructor {
+    padding: 20px 10px;
+  }
+
+  .burger-constructor__content {
+    background: url("../../images/bg-constructor.png") no-repeat center;
+    background-size: contain;
+    width: 100%;
+    height: 80%;
+  }
+
+  .burger-constructor__inner {
+    height: 400px;
+    width: 250px;
+  }
+
+  .burger-constructor__summary {
+    width: 100%;
+  }
+
+  .burger-constructor__summary-content {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .burger-constructor__summary-price {
+    text-align: center;
+  }
+
+  .burger-constructor__summary-info {
+    background-color: transparent;
+    padding: 2px;
+    justify-items: center;
+  }
+
+  .burger-constructor__ketchup-image {
+    width: 50%;
+    bottom: -20px;
+    right: -50px;
+    z-index: 99;
+  }
+
+  .burger-constructor__ketchup-image img {
+    width: 100%;
+  }
+}
+
+@media screen and (mon-width: 769px) {
+  .burger-constructor__summary-descr {
+    grid-column: span 2;
+  }
+}
