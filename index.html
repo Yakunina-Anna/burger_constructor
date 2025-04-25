@@ -25,7 +25,7 @@
             </ul>
           </nav>
         </div>
-        <button id="callback-button" class="button button--red callback-button">
+        <button id="callBack-button" class="button button--red callback-button">
           <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect id="device/phone-fill" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0" />
@@ -396,7 +396,7 @@
   <div id="toast" class="toast">
     <div class="toast__content"></div>
   </div>
-  <div id="callback-modal" class="modal">
+  <div id="callBack-modal" class="modal">
     <div class="modal__content">
       <div class="modal__header">
         <div class="modal__title">
@@ -406,9 +406,9 @@
               d="M12 20C14.12 20 16.15 19.15 17.65 17.65C19.15 16.15 20 14.12 20 12C20 9.87 19.15 7.84 17.65 6.34C16.15 4.84 14.12 4 12 4C9.87 4 7.84 4.84 6.34 6.34C4.84 7.84 4 9.87 4 12C4 14.12 4.84 16.15 6.34 17.65C7.84 19.15 9.87 20 12 20ZM12 22C6.47 22 2 17.52 2 12C2 6.47 6.47 2 12 2C17.52 2 22 6.47 22 12C22 17.52 17.52 22 12 22ZM12 14C11.46 14 10.96 13.78 10.58 13.41C10.21 13.03 10 12.53 10 12C10 11.46 10.21 10.96 10.58 10.58C10.96 10.21 11.46 10 12 10C12.53 10 13.03 10.21 13.41 10.58C13.78 10.96 14 11.46 14 12C14 12.53 13.78 13.03 13.41 13.41C13.03 13.78 12.53 14 12 14Z"
               fill="#1F2939" fill-opacity="1.000000" fill-rule="nonzero" />
           </svg>
-          <h5>Checkout</h5>
+          <h5>Call me back</h5>
         </div>
-        <div id="callback-close" class="modal__close">
+        <div class="modal__close">
           <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <path id="Vector"
@@ -417,7 +417,25 @@
           </svg>
         </div>
       </div>
-      dsfdsd
+      <form id="callBack-form" class="modal__callBack-form">
+        <div class="input-container">
+          <div class="input-wrapper">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.5 13.68L17.5 16.62C17.5 16.84 17.42 17.04 17.27 17.19C17.13 17.35 16.93 17.44 16.72 17.46C16.36 17.48 16.06 17.5 15.83 17.5C8.46 17.5 2.5 11.53 2.5 4.16C2.5 3.93 2.51 3.63 2.53 3.27C2.55 3.06 2.64 2.86 2.8 2.72C2.95 2.57 3.15 2.5 3.37 2.5L6.31 2.5C6.42 2.5 6.51 2.53 6.59 2.6C6.67 2.67 6.72 2.77 6.73 2.87C6.75 3.06 6.76 3.21 6.78 3.33C6.95 4.49 7.28 5.61 7.79 6.66C7.87 6.83 7.81 7.03 7.66 7.14L5.87 8.42C6.97 10.98 9.01 13.03 11.57 14.12L12.85 12.33C12.91 12.26 12.98 12.2 13.07 12.18C13.16 12.16 13.25 12.17 13.33 12.21C14.38 12.71 15.51 13.05 16.66 13.21C16.78 13.23 16.93 13.25 17.12 13.26C17.22 13.27 17.32 13.32 17.39 13.4C17.46 13.48 17.5 13.58 17.5 13.68L17.5 13.68Z"
+                  fill-opacity="1.000000" fill-rule="nonzero" />
+              </svg>
+            </div>
+            <input type="tel" id="callBack-phone" name="phone" class="custom-input input-with-icon" required />
+            <label for="phone" class="floating-label">Phone Number</label>
+          </div>
+        </div>
+        <div class="modal__actions">
+          <button class="button button--ghost button--md modal__close" type="reset">Cancel</button>
+          <button class="button button--primary button--md" type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
   <div id="header-modal" class="header__modal">

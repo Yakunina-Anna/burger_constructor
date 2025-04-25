@@ -1,25 +1,42 @@
-let scrollPosition = 0;
+import { showToast } from './toast.js';
+import { createModalCore } from './modalCore.js';
+
 export function initCallBackModal() {
-  const modal = document.getElementById('callback-modal');
-  const buttonOpen = document.getElementById('callback-button');
-  const buttonClose = document.getElementById('callback-close');
+  const modal = createModalCore('callBack-modal', {
+    onOpen: updateDeliveryTimes,
+    onClose: resetForm
+  });
 
-  buttonOpen.addEventListener('click', () => openCallBackModal());
-  buttonClose.addEventListener('click', () =>closeCallBackModal());
+  const callBackButton = document.getElementById('callBack-button');
+  const form = document.getElementById('callBack-form');
 
-  function openCallBackModal() {
-    scrollPosition = window.scrollY;
-    document.body.classList.add('no-scroll');
-    document.body.style.top = `-${scrollPosition}px`;
-    console.log(modal)
-    modal.style.display = 'block';
+  if (callBackButton) {
+    callBackButton.addEventListener('click', modal.open);
+  }
+  if (form) {
+    form.addEventListener('submit', handleSubmit);
   }
 
-  function closeCallBackModal() {
-    modal.style.display = 'none';
-    document.body.classList.remove('no-scroll');
-    document.body.style.top = '';
-    window.scrollTo(0, scrollPosition);
+  function updateDeliveryTimes() {
+    console.log('форма открыта')
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const phone = document.getElementById('callBack-phone').value;
+
+    if (!phone) {
+      showToast('Пожалуйста, заполните все поля', 'error');
+      return;
+    }
+
+    console.log('Order data:', {  phone });
+    showToast('Запрос успешно отправлен!', 'success');
+    modal.close();
+  }
+
+  function resetForm() {
+    form?.reset();
   }
 }
-
