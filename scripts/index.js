@@ -12,7 +12,7 @@ export * from './responsive/responsiveVisibility.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTabs();
-  renderIngredients('.burger-constructor__controls', ingredientsData);
+  renderIngredients('#burger-ingredients-container', ingredientsData);
   initBurgerConstructor();
   initializePrices();
   initModal();
