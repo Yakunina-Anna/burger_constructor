@@ -40,3 +40,54 @@ export function updateBunTopPosition(currentHeight, addedIngredients) {
     setTimeout(() => { bunTop.classList.add('hidden'); }, 300)
   }
 }
+
+/**
+ * Генерирует HTML-разметку для одного ингредиента.
+ *
+ * @param {string} ingredientName - Название ингредиента (например, "beef", "cheese").
+ * @param {Object} data - Данные ингредиента.
+ * @param {number} data.price - Цена ингредиента.
+ * @returns {string} - HTML-строка, представляющая элемент ингредиента.
+ */
+export const generateIngredientHTML = (ingredientName, data) => {
+  return `
+    <div class="burger-constructor__item">
+      <div class="burger-constructor__item-image">
+        <img src="./assets/images/${ingredientName}.png" alt="${ingredientName}">
+      </div>
+      <p class="font-14-semibold">${ingredientName.charAt(0).toUpperCase() + ingredientName.slice(1)}</p>
+      <div class="burger-constructor__item-actions">
+        <button class="button button--ghost button--xs button-action--circle button--add"
+          data-action="add"
+          data-ingredient="${ingredientName}">+</button>
+        <span class="count">0</span>
+        <button class="button button--ghost button--xs button-action--circle button--remove"
+          data-action="remove"
+          data-ingredient="${ingredientName}">-</button>
+      </div>
+      <div class="burger-constructor__item-price">
+        <span>$${data.price.toFixed(2)}</span>
+      </div>
+    </div>
+  `;
+};
+
+/**
+ * Рендерит список ингредиентов в указанный контейнер.
+ *
+ * @param {string} containerSelector - CSS-селектор контейнера, куда будут добавлены ингредиенты.
+ * @param {Object} ingredientsData - Объект с данными ингредиентов.
+ * @param {Object.<string, IngredientData>} ingredientsData - Ключи — названия ингредиентов, значения — объекты с данными.
+ * @param {number} ingredientsData.price - Цена ингредиента.
+ * @returns {void}
+ */
+export const renderIngredients = (containerSelector, ingredientsData) => {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+
+  const ingredientsHTML = Object.entries(ingredientsData)
+    .map(([ingredientName, data]) => generateIngredientHTML(ingredientName, data))
+    .join('');
+
+  container.innerHTML = ingredientsHTML;
+};

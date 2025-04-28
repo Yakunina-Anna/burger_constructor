@@ -1,4 +1,4 @@
-import { ingredientsData, deviceBurgerConfig } from '../../data/ingredientsData.js';
+import { ingredientsData } from '../../data/ingredientsData.js';
 import { updateTotals } from './totalsCalculatorBurger.js';
 import { updateBunTopPosition } from './uiComponentsBurger.js';
 import { calculateAdditionalOffset } from '../../utils/helpers.js';

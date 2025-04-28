@@ -1,6 +1,7 @@
+import { ingredientsData } from './data/ingredientsData.js';
 import { initTabs } from './components/header/tabs.js';
 import { initBurgerConstructor } from './components/constructorBurgers/logicConstructorBurger.js';
-import { initializePrices } from './components/constructorBurgers/uiComponentsBurger.js';
+import { initializePrices, renderIngredients } from './components/constructorBurgers/uiComponentsBurger.js';
 import { initModal } from './components/modals/modalCheckout.js';
 import { initMenuModal } from './components/modals/modalHeaderMenu.js';
 import { initCallBackModal } from './components/modals/modalCallBack.js';
@@ -11,6 +12,7 @@ export * from './responsive/responsiveVisibility.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTabs();
+  renderIngredients('.burger-constructor__controls', ingredientsData);
   initBurgerConstructor();
   initializePrices();
   initModal();

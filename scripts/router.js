@@ -16,10 +16,5 @@ onAuthStateChanged(auth, (user) => {
     if (!window.location.pathname.endsWith('auth.html')) {
       window.location.href = 'auth.html';
     }
-
-    // Перенаправляем на страницу входа, если пользователь находится на главной странице
-    if (!window.location.pathname.endsWith('auth.html')) {
-      window.location.href = 'auth.html';
-    }
   }
 });

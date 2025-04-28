@@ -10,30 +10,3 @@ export const ingredientsData = {
   onion: { price: 1, calories: 10, height: 28 * 1.5, weightOz: 0.5, timeMinutes: 0.2 },
   ketchup: { price: 1, calories: 50, height: 2 * 1.5, weightOz: 0.2, timeMinutes: 0.1 },
 };
-
-export const deviceBurgerConfig = {
-  mobile: {
-    scaleFactor: 0.5,
-    containerHeight: 300,
-    maxBurgerHeight: window.innerHeight - 30,
-    bunTopOffset: 125,
-  },
-  tabletMini: {
-    scaleFactor: 0.7,
-    containerHeight: 420,
-    maxBurgerHeight: window.innerHeight - 50,
-    bunTopOffset: 163,
-  },
-  tablet: {
-    scaleFactor: 1,
-    containerHeight: 570,
-    maxBurgerHeight: window.innerHeight - 100,
-    bunTopOffset: 200,
-  },
-  desktop: {
-    scaleFactor: 1,
-    containerHeight: 570,
-    maxBurgerHeight: window.innerHeight - 100,
-    bunTopOffset: 200,
-  },
-};
