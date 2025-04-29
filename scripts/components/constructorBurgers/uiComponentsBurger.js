@@ -85,11 +85,12 @@ export const renderIngredients = (containerSelector, ingredientsData) => {
   const container = document.querySelector(containerSelector);
   if (!container) return;
 
+  const excludedIngredients = ['bun_top', 'ketchup'];
+
   const filteredIngredients = Object.entries(ingredientsData).filter(
-    ([ingredientName]) => ingredientName !== 'bun_top'
+    ([ingredientName]) => !excludedIngredients.includes(ingredientName)
   );
 
-  // Генерируем HTML только для отфильтрованных ингредиентов
   const ingredientsHTML = filteredIngredients
     .map(([ingredientName, data]) => generateIngredientHTML(ingredientName, data))
     .join('');
